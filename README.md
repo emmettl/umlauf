@@ -2,7 +2,7 @@
 
 **A Berlin motion study.** A railway draws an inside. The city keeps crossing it.
 
-First source-pinned interactive proof, 7 September 2026. An independent, unnumbered [Motion Studies](https://github.com/emmettl/motionstudies) edition consuming exact published `@motionstudies/*` version `0.1.0-alpha.2`. Umlauf remains a working title.
+First source-pinned interactive proof, 7 September 2026. An independent, unnumbered [Motion Studies](https://github.com/emmettl/motionstudies) edition consuming exact published `@motionstudies/*` version `0.1.0-alpha.3`. Umlauf remains a working title.
 
 ## What works
 
@@ -56,4 +56,6 @@ The compiler refuses an archive with a different SHA-256. Review new releases be
 
 ## Review preview and performance
 
-A private Sites review is prepared from the checked static build; source upload and deployment are awaiting explicit authorization. A manual GitHub Pages workflow is prepared, but the current account plan does not support Pages from this private repository. It does not publish on every push. The page is unnumbered, uses a working title, and requests no search indexing. See [water provenance](docs/WATER.md), [performance protocol](docs/PERFORMANCE.md), and [publication review](docs/REVIEW.md).
+[Open the private Berlin review](https://umlauf-berlin-review.vndh2vk2v4.chatgpt.site). Sign in with the account that owns this Site.
+
+The owner-only Sites review uses the checked static build; source upload and private deployment were explicitly approved on 7 September 2026. A manual GitHub Pages workflow is prepared, but the current account plan does not support Pages from this private repository. It does not publish on every push. The page is unnumbered, uses a working title, and requests no search indexing. See [water provenance](docs/WATER.md), [performance protocol](docs/PERFORMANCE.md), and [publication review](docs/REVIEW.md).

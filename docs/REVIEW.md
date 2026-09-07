@@ -13,7 +13,7 @@ Umlauf is a working title; this is an unnumbered review preview. The current edi
 
 The browser serves retained VBB-derived timetable artifacts under CC BY 4.0, with attribution, source modifications, source hash and journey lineage accessible. Berlin ATKIS water/bridge derivatives use Germany Zero 2.0 and retain dated requests, source bytes and IDs in the repository. DB InfraGO platform dimensions are cited facts; no station-plan artwork or contractor imagery is published. Raw VBB archive and retained engineering HTML remain ignored source files, outside the static site. No private credentials or provider endpoints are called by the browser.
 
-An owner-only Sites project is registered for the checked `dist` artifact, but no source or version has been uploaded: automatic approval review requires explicit authorization to transfer this private repository’s source and Git history to the external Sites repository. The build and archive are ready locally. GitHub Pages rejected activation because the current account plan does not support this private repository; its visibility was not changed. The prepared Pages workflow remains unused. Preview publication does not settle the final title, catalogue admission, physical-device acceptance or metric station heights. The HTML requests `noindex`; this is not access control.
+The owner-only Sites project publishes the checked `dist` artifact. The user explicitly authorized source/history upload and private preview deployment on 7 September 2026. GitHub Pages rejected activation because the current account plan does not support this private repository; its visibility was not changed. The prepared Pages workflow remains unused. Preview publication does not settle the final title, catalogue admission, physical-device acceptance or metric station heights. The HTML requests `noindex`; this is not access control.
 
 ## Remaining decisions
 
@@ -22,4 +22,4 @@ An owner-only Sites project is registered for the checked `dist` artifact, but n
 - Engineering/survey evidence before any metre-based interchange height or approach-gradient claim.
 - Full-day and realtime expansion remain deferred. Official terrain is optional and not required by the present Ring/water composition.
 
-The current preview retains the alpha.2 luminous renderer. Flat-route visibility fixes, reduced draw submissions and quiet ground are verified upstream in commit 4c86b50; applying them requires the pending alpha.3 npm publication approval.
+The preview uses published alpha.3 packages with flat routes and quiet ground. The approved coordinated release passed [hosted verification and npm publication](https://github.com/emmettl/motionstudies/actions/runs/34155462468).

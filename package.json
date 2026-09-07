@@ -4,9 +4,9 @@
     "node": ">=24.0.0"
   },
   "dependencies": {
-    "@motionstudies/core": "0.1.0-alpha.2",
-    "@motionstudies/three": "0.1.0-alpha.2",
-    "@motionstudies/web": "0.1.0-alpha.2",
+    "@motionstudies/core": "0.1.0-alpha.3",
+    "@motionstudies/three": "0.1.0-alpha.3",
+    "@motionstudies/web": "0.1.0-alpha.3",
     "@react-three/fiber": "9.7.0",
     "react": "19.2.8",
     "react-dom": "19.2.8",
@@ -14,7 +14,7 @@
   },
   "devDependencies": {
     "@babel/parser": "7.29.8",
-    "@motionstudies/data": "0.1.0-alpha.2",
+    "@motionstudies/data": "0.1.0-alpha.3",
     "@playwright/test": "1.62.1",
     "@types/react": "19.2.18",
     "@types/react-dom": "19.2.7",
@@ -30,7 +30,7 @@
   "name": "umlauf",
   "version": "0.0.0",
   "private": true,
-  "description": "Umlauf \u2014 a Berlin motion study",
+  "description": "Umlauf — a Berlin motion study",
   "scripts": {
     "dev": "vite --host 127.0.0.1 --port 4177",
     "build": "tsc -p . && vite build",

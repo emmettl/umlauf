@@ -52,10 +52,10 @@ The small [ATKIS source package](docs/ATKIS.md) is committed and rebuilds offlin
 npm run data:compile
 ```
 
-The compiler refuses an archive with a different SHA-256. Review new releases before updating that pin. Public deployment is not configured in this first proof.
+The compiler refuses an archive with a different SHA-256. Review new releases before updating that pin. The approved static build is published through a separate deployment repository; see [publication record](docs/PUBLISHING.md).
 
 ## Review preview and performance
 
-[Open the private Berlin review](https://umlauf-berlin-review.vndh2vk2v4.chatgpt.site). Sign in with the account that owns this Site.
+[Open Umlauf on GitHub Pages](https://emmettl.github.io/umlauf-pages/). The [owner-only Sites review](https://umlauf-berlin-review.vndh2vk2v4.chatgpt.site) remains available separately.
 
-The owner-only Sites review uses the checked static build; source upload and private deployment were explicitly approved on 7 September 2026. A manual GitHub Pages workflow is prepared, but the current account plan does not support Pages from this private repository. It does not publish on every push. The page is unnumbered, uses a working title, and requests no search indexing. See [water provenance](docs/WATER.md), [performance protocol](docs/PERFORMANCE.md), and [publication review](docs/REVIEW.md).
+The owner-only Sites review uses the checked static build; source upload and private deployment were explicitly approved on 7 September 2026. Public Pages publication was approved on 7 September 2026. Because the current plan blocks Pages from a private repository, [umlauf-pages](https://github.com/emmettl/umlauf-pages) contains only the checked build and public datasets. This source repository and its history remain private. Publication is deliberate; source pushes do not automatically update Pages. The page is unnumbered, uses a working title, and requests no search indexing. See [water provenance](docs/WATER.md), [performance protocol](docs/PERFORMANCE.md), and [publication review](docs/REVIEW.md).

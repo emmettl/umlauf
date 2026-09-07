@@ -5,6 +5,11 @@ export function travelStage(progress:number,start:number,end:number){
  return t*t*(3-2*t)
 }
 
+export function advanceTravel(current:number,target:number,elapsedMs:number){
+ const step=Math.max(0,elapsedMs)/2800
+ return target?Math.min(1,current+step):Math.max(0,current-step)
+}
+
 // Reversible travel has no clock of its own: only the visible scene owns playback.
 // Wait for verified station data before leaving the city, including reduced motion.
 export function useInterchangeTravel(enter:boolean,ready:boolean){
@@ -14,10 +19,9 @@ export function useInterchangeTravel(enter:boolean,ready:boolean){
  useEffect(()=>{
   const target=enter&&ready?1:0
   if(reduced){current.current=target;setProgress(target);return}
-  let handle=0,last=0
+  let handle=0,last=performance.now()
   const tick=(now:number)=>{
-   const step=last?Math.min(64,now-last)/2800:0;last=now
-   current.current=target?Math.min(1,current.current+step):Math.max(0,current.current-step)
+   current.current=advanceTravel(current.current,target,now-last);last=now
    setProgress(current.current)
    if(current.current!==target)handle=requestAnimationFrame(tick)
   }

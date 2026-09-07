@@ -2,9 +2,9 @@
 
 ## Ostkreuz travel and zoom labels · 7 September 2026
 
-Sixteen source/model tests and thirty desktop/phone browser checks cover the reversible approach, interrupted travel, preserved time/direction/crossing family/diagram setting, lazy station loading, slow and failed source recovery, reduced motion, and additional station-label textures rendered at closer zoom while train labels remain off. The city canvas is removed after arrival; exactly one scene owns playback. The transition, final station view and closer map labels were visually inspected at 1440×1000 and 390×844.
+Seventeen source/model tests and thirty desktop/phone browser checks cover the reversible approach, interrupted travel, preserved time/direction/crossing family/diagram setting, lazy station loading, slow and failed source recovery, reduced motion, and additional station-label textures rendered at closer zoom while train labels remain off. Travel follows elapsed time even when frames are dropped; a hosted-run failure exposed and corrected the original per-frame cap. The reversal test uses controlled time after the lazy module loads. The city canvas is removed after arrival; exactly one scene owns playback. The transition, final station view and closer map labels were visually inspected at 1440×1000 and 390×844.
 
-Typecheck, lint, public-package boundary checks and the production build pass. The opening including optional water is 550,441 bytes gzip against the 588,800-byte gate. Data artifacts and exact alpha.3 package pins are unchanged. Physical-phone performance and measured interchange heights remain open.
+Typecheck, lint, public-package boundary checks and the production build pass. The opening including optional water is 550,451 bytes gzip against the 588,800-byte gate. Data artifacts and exact alpha.3 package pins are unchanged. Physical-phone performance and measured interchange heights remain open.
 
 ## Two-direction composition · 7 September 2026
 

@@ -1,0 +1,13 @@
+{
+  "sourceUrl": "https://unternehmen.vbb.de/digitale-services/datensaetze/",
+  "retainedAt": "2026-09-07T14:48:06.405Z",
+  "sha256": "9ec718478b797b820a825ba253f9203270450c5c1693f1a59ee1b095ad33cb88",
+  "bytes": 60108,
+  "licence": "CC BY 4.0",
+  "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+  "sourceCopy": "sources/vbb-source-page.html",
+  "archive": "sources/vbb-20260903.zip",
+  "archiveSha256": "be2b1608e038ee1d53b8bfc86974eff37b7af1927a585f5cfcd255a770d84d2b",
+  "archiveAcquiredDate": "2026-09-06",
+  "archiveAcquisitionTime": "not recorded; date and hash retained from Motion Studies audit"
+}

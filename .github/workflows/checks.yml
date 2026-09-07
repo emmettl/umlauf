@@ -1,0 +1,18 @@
+name: Check Umlauf
+on: [push, pull_request, workflow_dispatch]
+permissions:
+  contents: read
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm install --global npm@11.19.0 --ignore-scripts
+      - run: npm ci
+      - run: npm run typecheck && npm run lint && npm run check:boundary && npm test && npm run build
+      - run: npx playwright install --with-deps chromium
+      - run: npm run test:browser -- --workers=2

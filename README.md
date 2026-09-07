@@ -52,13 +52,13 @@ The small [ATKIS source package](docs/ATKIS.md) is committed and rebuilds offlin
 npm run data:compile
 ```
 
-The compiler refuses an archive with a different SHA-256. Review new releases before updating that pin. The approved static build is published by this repository’s manual Pages workflow; see [publication record](docs/PUBLISHING.md).
+The compiler refuses an archive with a different SHA-256. Review new releases before updating that pin. The approved static build is published by this repository’s Pages workflow; see [publication record](docs/PUBLISHING.md).
 
 ## Review preview and performance
 
 [Open Umlauf on GitHub Pages](https://emmettl.github.io/umlauf/). The [owner-only Sites review](https://umlauf-berlin-review.vndh2vk2v4.chatgpt.site) remains available separately.
 
-The owner-only Sites review uses the checked static build; source upload and private deployment were explicitly approved on 7 September 2026. Public Pages publication was approved on 7 September 2026. Pages initially used the separate [umlauf-pages](https://github.com/emmettl/umlauf-pages) deployment repository while the source was private. The canonical site now publishes directly from this repository at `/umlauf/`. The user subsequently approved making this source repository and its full Git history public on 7 September 2026; that visibility change is complete. Publication is deliberate; source pushes do not automatically update Pages. The page is unnumbered, uses a working title, and requests no search indexing. See [water provenance](docs/WATER.md), [performance protocol](docs/PERFORMANCE.md), and [publication review](docs/REVIEW.md).
+The owner-only Sites review uses the checked static build; source upload and private deployment were explicitly approved on 7 September 2026. Public Pages publication was approved on 7 September 2026. Pages initially used the separate [umlauf-pages](https://github.com/emmettl/umlauf-pages) deployment repository while the source was private. The canonical site now publishes directly from this repository at `/umlauf/`. The user subsequently approved making this source repository and its full Git history public on 7 September 2026; that visibility change is complete. Pushes to `main` automatically update Pages after the full check suite passes. The page is unnumbered, uses a working title, and requests no search indexing. See [water provenance](docs/WATER.md), [performance protocol](docs/PERFORMANCE.md), and [publication review](docs/REVIEW.md).
 
 ## Standard selection labels
 

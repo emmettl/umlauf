@@ -1,6 +1,8 @@
 name: Check Umlauf
 on:
   push:
+    # Main pushes run this suite through the Pages workflow.
+    branches-ignore: [main]
   pull_request:
   workflow_dispatch:
   workflow_call:

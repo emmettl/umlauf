@@ -8,7 +8,7 @@ The initial approval covered publishing the site and bundled datasets publicly w
 
 On 7 September 2026 the user separately confirmed making [emmettl/umlauf](https://github.com/emmettl/umlauf) and its full Git history public. GitHub now reports `visibility: public` and `private: false`. A focused scan of all 168 historical blobs found no credential patterns; retained VBB archives, the DB reference PDF and engineering HTML are ignored and absent from Git history. This scan is a bounded check, not a security guarantee.
 
-After source publication, the user requested the canonical `/umlauf/` URL. Pages is now enabled directly on the public source repository, using its manual checked workflow. The owner-only Sites review retains its existing access settings. Source visibility does not automatically deploy new website builds.
+After source publication, the user requested the canonical `/umlauf/` URL. Pages is now enabled directly on the public source repository, using its automatic checked workflow. The owner-only Sites review retains its existing access settings. Pushes to `main` now deploy automatically after the full check suite passes.
 
 ## Initial release at `/umlauf-pages/`
 
@@ -29,4 +29,6 @@ The public release includes the station-aware active-journey count correction. T
 
 ## Updating Pages
 
-Run `.github/workflows/pages.yml` manually on the intended source ref. It runs the reusable check suite, downloads that run's `umlauf-preview` build, uploads the Pages artifact and deploys it. Source pushes alone do not publish. Verify the deployment succeeds and the served files match its build artifact; record the release here. The separate `umlauf-pages` repository is retained for the old-address redirect.
+Every push to `main` triggers `.github/workflows/pages.yml`. It runs the reusable check suite, downloads that run's `umlauf-preview` build, uploads the Pages artifact and deploys it only after checks succeed. This also publishes the alpha.4 label improvements already on `main`. Manual dispatch remains available; deployment is restricted to `main`. Pull requests and other branch pushes run the standalone check workflow without deployment, and main pushes avoid running the same suite twice.
+
+Verify the deployment succeeds and the served files match its build artifact. The separate `umlauf-pages` repository is retained for the old-address redirect.

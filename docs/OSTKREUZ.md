@@ -35,4 +35,6 @@ The PDF is retained locally in ignored `sources/ostkreuz-station-plan.pdf`. Its 
 
 ## Next gate
 
-The relative section is implemented and testable. Measured rail heights, platform extents, building structure and approaches need additional authoritative engineering or geodata before the scene can claim a metric physical section. This work does not clear those fields by assigning heights to ordinal levels.
+The relative section now includes an optional [official ATKIS bridge footprint](ATKIS.md). Its mapped outline is supplied geometry; its placement on the upper display level is illustrative. The retained Ringbahn feature explicitly references this bridge. This adds a second geodata publisher under Germany Zero 2.0, with independent source hashes and attribution in the app.
+
+Measured rail heights, individual platform extents, building structure and approaches still need engineering or survey evidence before the scene can claim a metric physical section. The inspected ATKIS records are two-dimensional and do not clear those fields.

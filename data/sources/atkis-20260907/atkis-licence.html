@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+<meta name="Generator" content="Drupal 10 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="icon" href="/fav/favicon.ico" type="image/vnd.microsoft.icon" />
+
+    <title>ATKIS Basis-DLM (Präsentationsdienst) - [WFS] | Berlin Open Data</title>
+    <link rel="stylesheet" media="all" href="/modules/contrib/data_tunnel/css/tagify.css?ti82ad" />
+<link rel="stylesheet" media="all" href="/modules/contrib/data_tunnel/css/tagify_styleguide.css?ti82ad" />
+<link rel="stylesheet" media="all" href="/modules/contrib/data_tunnel/css/datenportal.css?ti82ad" />
+<link rel="stylesheet" media="all" href="/themes/contrib/stable/css/system/components/align.module.css?ti82ad" />
+<link rel="stylesheet" media="all" href="/themes/contrib/stable/css/system/components/fieldgroup.module.css?ti82ad" />
+<link rel="stylesheet" media="all" href="/themes/contrib/stable/css/system/components/container-inline.module.css?ti82ad" />
+<link rel="stylesheet" media="all" href="/themes/contrib/stable/css/system/components/clearfix.module.css?ti82ad" />
+<link rel="stylesheet" media="all" href="/themes/contrib/stable/css/system/components/details.module.css?ti82ad" />
+<link rel="stylesheet" media="all" href="/themes/contrib/stable/css/system/components/hidden.module.css?ti82ad" />
+<link rel="stylesheet" media="all" href="/themes/contrib/stable/css/system/components/item-list.module.css?ti82ad" />
+<link rel="stylesheet" media="all" href="/themes/contrib/stable/css/system/components/js.module.css?ti82ad" />
+<link rel="stylesheet" media="all" href="/themes/contrib/stable/css/system/components/nowrap.module.css?ti82ad" />
+<link rel="stylesheet" media="all" href="/themes/contrib/stable/css/system/components/position-container.module.css?ti82ad" />
+<link rel="stylesheet" media="all" href="/themes/contrib/stable/css/system/components/reset-appearance.module.css?ti82ad" />
+<link rel="stylesheet" media="all" href="/themes/contrib/stable/css/system/components/resize.module.css?ti82ad" />
+<link rel="stylesheet" media="all" href="/themes/contrib/stable/css/system/components/system-status-counter.css?ti82ad" />
+<link rel="stylesheet" media="all" href="/themes/contrib/stable/css/system/components/system-status-report-counters.css?ti82ad" />
+<link rel="stylesheet" media="all" href="/themes/contrib/stable/css/system/components/system-status-report-general-info.css?ti82ad" />
+<link rel="stylesheet" media="all" href="/themes/contrib/stable/css/system/components/tablesort.module.css?ti82ad" />
+<link rel="stylesheet" media="all" href="/themes/contrib/stable/css/core/assets/vendor/normalize-css/normalize.css?ti82ad" />
+<link rel="stylesheet" media="all" href="/themes/contrib/stable/css/core/normalize-fixes.css?ti82ad" />
+<link rel="stylesheet" media="all" href="/themes/contrib/berlinde_theme/css/asset-extra.css?ti82ad" />
+<link rel="stylesheet" media="all" href="/themes/contrib/classy/css/components/action-links.css?ti82ad" />
+<link rel="stylesheet" media="all" href="/themes/contrib/classy/css/components/breadcrumb.css?ti82ad" />
+<link rel="stylesheet" media="all" href="/themes/contrib/classy/css/components/button.css?ti82ad" />
+<link rel="stylesheet" media="all" href="/themes/contrib/classy/css/components/collapse-processed.css?ti82ad" />
+<link rel="stylesheet" media="all" href="/themes/contrib/classy/css/components/container-inline.css?ti82ad" />
+<link rel="stylesheet" media="all" href="/themes/contrib/classy/css/components/details.css?ti82ad" />
+<link rel="stylesheet" media="all" href="/themes/contrib/classy/css/components/exposed-filters.css?ti82ad" />
+<link rel="stylesheet" media="all" href="/themes/contrib/classy/css/components/field.css?ti82ad" />
+<link rel="stylesheet" media="all" href="/themes/contrib/classy/css/components/form.css?ti82ad" />
+<link rel="stylesheet" media="all" href="/themes/contrib/classy/css/components/icons.css?ti82ad" />
+<link rel="stylesheet" media="all" href="/themes/contrib/classy/css/components/inline-form.css?ti82ad" />
+<link rel="stylesheet" media="all" href="/themes/contrib/classy/css/components/item-list.css?ti82ad" />
+<link rel="stylesheet" media="all" href="/themes/contrib/classy/css/components/link.css?ti82ad" />
+<link rel="stylesheet" media="all" href="/themes/contrib/classy/css/components/links.css?ti82ad" />
+<link rel="stylesheet" media="all" href="/themes/contrib/classy/css/components/menu.css?ti82ad" />
+<link rel="stylesheet" media="all" href="/themes/contrib/classy/css/components/more-link.css?ti82ad" />
+<link rel="stylesheet" media="all" href="/themes/contrib/classy/css/components/pager.css?ti82ad" />
+<link rel="stylesheet" media="all" href="/themes/contrib/classy/css/components/tabledrag.css?ti82ad" />
+<link rel="stylesheet" media="all" href="/themes/contrib/classy/css/components/tableselect.css?ti82ad" />
+<link rel="stylesheet" media="all" href="/themes/contrib/classy/css/components/tablesort.css?ti82ad" />
+<link rel="stylesheet" media="all" href="/themes/contrib/classy/css/components/tabs.css?ti82ad" />
+<link rel="stylesheet" media="all" href="/themes/contrib/classy/css/components/textarea.css?ti82ad" />
+<link rel="stylesheet" media="all" href="/themes/contrib/classy/css/components/ui-dialog.css?ti82ad" />
+<link rel="stylesheet" media="all" href="/themes/contrib/classy/css/components/messages.css?ti82ad" />
+<link rel="stylesheet" media="all" href="https://www.berlin.de/i9f/r1/bundle/berlin_assetservice.css" />
+<link rel="stylesheet" media="all" href="https://www.berlin.de/i9f/r1/bundle/fontawesome.all.min.css" />
+
+    <script src="https://www.berlin.de/i9f/v4/js/bo-info.js"></script>
+
+    <!-- favicons -->
+    <link rel="icon" href="/fav/favicon.ico" sizes="any">
+    <link rel="icon" href="/fav/Berlin_de.svg" type="image/svg+xml">
+    <link rel="mask-icon" href="/fav/safari-pinned-tab.svg" color="#000000">
+    <link rel="apple-touch-icon" href="/fav/apple-touch-icon.png">
+    <link rel="manifest" href="/fav/manifest.json">
+    <meta name="og:image" content="/fav/Berlin_de_FB_Social.png">
+    <meta name="og:image:secure_url" content="/fav/Berlin_de_FB_Social.png">
+    <meta name="msapplication-TileColor" content="#2b5797">
+    <meta name="msapplication-config" content="/fav/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+    <!-- /favicons -->
+  </head>
+  <body>
+        <a href="#main-content" class="visually-hidden focusable">
+      Skip to main content
+    </a>
+    
+      <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    
+<div id="page-wrapper">
+    
+
+<header id="header">
+  <div class="header__row-portalbrand">
+      <div class="logo">
+          <a href="https://www.berlin.de" alt="Zur Startseite von Berlin.de">
+              <img class="logo" title="Berlin.de" src="https://www.berlin.de/css/berlin_de/foxtrot/images/logo_berlin_m_srgb.svg" alt="Berlin.de">
+          </a>
+      </div>
+  </div>
+
+  <div class="header__row-pageheader">
+      <div class="pageheader__logo">
+          <div class="logo">
+              <div class="image__image">
+                  <a href="http://daten.berlin.de/" title="Link zur Startseite" rel="home" class="logo">
+                    <img src="/themes/contrib/berlinde_theme/logo.svg" alt="Berlin Open Data Logo">
+                  </a>
+              </div>
+          </div>
+      </div>
+
+      <div class="pageheader__services">
+        <div id="servicebuttonAccessibility" class="service-button-overlay js-service-button-overlay accessibility">
+            <div class="service-button-overlay__button">
+                <button type="button" class="icon-button js-button-overlay-open" aria-haspopup="true" aria-label="Overlay Öffnen: Barrierefreiheit">
+                    <i class="icon bicon bicon-universal-access" aria-hidden="true"></i>
+                    <span class="text">Barrierefrei</span>
+                </button>
+            </div>
+            <!--noindex--><!--googleoff: index-->
+            <div role="dialog" aria-labelledby="dialogtitle_accessibility" class="service-button-overlay__overlay overlay js-overlay-container robots-nocontent" aria-modal="true" hidden="hidden">
+                <div class="overlay__header">
+                    <p id="dialogtitle_accessibility" class="heading">Barrierefreiheit</p>
+                    <button type="button" class="close-button js-button-overlay-close" aria-label="Overlay Schließen: Barrierefreiheit">
+                        <i class="bicon bicon-times" aria-hidden="true"></i>
+                    </button>
+                </div>
+                <div class="overlay__body">
+                    <dl>
+                        <dt>Wie barrierefrei ist diese Webseite?</dt>
+                        <dd>
+                            <p><a href="/barrierefreiheitserklaerung">Erklärung zur digitalen Barrierefreiheit</a></p>
+                        </dd>
+
+                        <dt>Wen können Sie bei Anmerkungen oder Fragen zur digitalen Barrierefreiheit (Feedbackoption) kontaktieren?</dt>
+
+                        <dd>
+                            <p>
+                                <a href="/barrierefreiheitserklaerung#contactbfe">
+                                Kontakt zur Ansprechperson
+                                </a>
+                            </p>
+                        </dd>
+
+                        <dt>Wo gibt es zusätzliche Informationen zur Barrierefreiheit im Land Berlin?</dt>
+                        <dd>
+                            <p>
+                                <a href="/barrierefreiheitserklaerung#contactbfelb">
+                                Landesbeauftragte für digitale Barrierefreiheit
+                                </a>
+                            </p>
+                        </dd>
+                    </dl>
+                </div>
+                </div>
+                <!--googleon: index--><!--/noindex-->
+            </div>
+
+          <div id="servicebuttonSearch" class="service-button-overlay js-service-button-overlay search fullwidth">
+              <div class="service-button-overlay__button">
+                  <button type="button" class="icon-button js-button-overlay-open" aria-haspopup="true">
+                      <i class="icon fa fa-search" aria-hidden="true"></i>
+                      <span class="aural">Öffnen: Suche</span>
+                      <span class="text">Suche</span>
+                  </button>
+              </div>
+              <div class="service-button-overlay__overlay overlay js-overlay-container" aria-modal="true" hidden="hidden">
+                  <div class="overlay__header">
+                      <h2 class="heading"><span class="aural">Suche</span></h2>
+                      <button type="button" class="close-button js-button-overlay-close">
+                          <i class="fas fa-times" aria-hidden="true"></i>
+                          <span class="aural">Schließen: Suche</span>
+                      </button>
+                  </div>
+                  <div class="overlay__body">
+                      <div class="search-container">
+                        
+<form action="/search/fork">
+  <div class="searchform-slot ">
+    <fieldset class="searchlocation">
+      <legend class="label">Was soll gesucht werden?</legend>
+      <div class="form-check form-check-inline">
+        <label class="form-check-label" for="myCheckbox1">Datensätze</label>
+        <input class="form-check-input" type="radio" id="myCheckbox1" name="category" value="data" checked="checked">
+      </div>
+      <div class="form-check form-check-inline">
+        <label class="form-check-label" for="myCheckbox2">Artikel und Apps</label>
+        <input class="form-check-input" type="radio" id="myCheckbox2" name="category" value="articles">
+      </div>
+    </fieldset>
+    <div class="form-group">
+      <label class="aural" for="myInputField">Suchbegriff</label>
+      <div class="searchterm">
+        <div class="input-wrapper">
+          <i class="bicon bicon-search lens" aria-hidden="true"></i>
+          <input type="search" class="form-control search" value="" placeholder="Suchbegriff" name="keys" id="myInputField" />
+        </div>
+        <button class="submit " type="submit" title="Suchen">
+          <span class="aural">Suchen</span>
+          <i class="bicon bicon-arrow-right icon" aria-hidden="true"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</form>
+
+
+                      </div>
+                  </div>
+              </div>
+          </div>
+
+          <div id="servicebuttonMenu" class="service-button-overlay js-service-button-overlay menu">
+              <div class="service-button-overlay__button">
+                  <button type="button" class="icon-button js-button-overlay-open" aria-haspopup="true">
+                      <i class="icon fa fa-bars" aria-hidden="true"></i>
+                      <span class="aural">Öffnen: Hauptnavigation</span>
+                      <span class="text">Menü</span>
+                  </button>
+              </div>
+              <div class="service-button-overlay__overlay overlay js-overlay-container" aria-modal="true" hidden="hidden">
+                  <div class="overlay__header">
+                      <h2 class="heading"><span>Hauptnavigation</span></h2>
+                      <button type="button" class="close-button js-button-overlay-close">
+                          <i class="fas fa-times" aria-hidden="true"></i>
+                          <span class="aural">Schließen: Hauptmenü</span>
+                      </button>
+                  </div>
+                  <div class="overlay__body">
+                      <nav id="navigation-primary" class="js-navigation-primary">
+                          <div class="tree-wrapper js-navigation-tree-wrapper">
+                              <h3 class="aural">Seitennavigation</h3>
+                                                                    <ul class="navigation-tree tree__root">
+                                                                                                                                                                                                                                    <li class="">
+                                        <a href="/">Startseite</a>
+                                      </li>
+                                                                                                                                                      <li class="active">
+                                        <a href="/datensaetze">Datensätze</a>
+                                      </li>
+                                                                                                                                                      <li class="">
+                                        <a href="/anwendungen">Anwendungen</a>
+                                      </li>
+                                                                                                                                                      <li class="">
+                                        <a href="/artikel">Artikel</a>
+                                      </li>
+                                                                                                                                                      <li class="">
+                                        <a href="/datenbereitsteller">Datenbereitsteller</a>
+                                      </li>
+                                                                      </ul>
+                          </div>
+                          <div class="navigation-meta">
+                              <h3 class="heading">Weiteres</h3>
+                                                                    <ul>
+                                                                      </ul>
+                          </div>
+                      </nav>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</header>    <div id="layout-grid" role="main">
+
+                          
+
+<div id="layout-grid__area--contentheader">
+  <div id="content-header">
+    <nav class="breadcrumb" aria-label="Sie befinden sich hier">
+      <ol>
+        <li>
+          <a href="/">Berlin Open Data</a>
+        </li> 
+        <li>
+          <a href="/datensaetze">Datensätze</a>
+        </li>
+        <li>
+          <span class="active" aria-current="page">ATKIS Basis-DLM (Präsentationsdienst) - [WFS]</span>
+        </li>  
+      </ol>
+    </nav>  
+  </div>
+</div>
+<div id="layout-grid__area--herounit" class="fullwidth">
+</div>
+<div id="layout-grid__area--maincontent">
+  <h1 class="title">ATKIS Basis-DLM (Präsentationsdienst) - [WFS]</h1>
+
+  
+
+  
+  <section class="modul-text_bild textbildbreit">
+    
+    
+      
+    
+    <div class="image">
+      <div class="image__image dataset">
+        <img src="https://gdi.berlin.de/data/atkis/preview/preview_wfs.png" alt="Vorschaugrafik zu Datensatz 'ATKIS Basis-DLM (Präsentationsdienst) - [WFS]'"/>
+      </div>
+      <p class="image__copyright">
+        Senatsverwaltung für Stadtentwicklung, Bauen und Wohnen Berlin |
+          Datenlizenz Deutschland – Zero – Version 2.0 (dl-de-zero-2.0)
+      </p>
+    </div>
+    
+      <div class="text">
+        <p>Das ATKIS-Basis DLM bildet die topographischen Objekte der Landesfläche von Berlin in Form von Vektordaten und unterschiedlichen Attributwerten, auf der Grundlage des digitalen Basis-Landschaftsmodells ab.</p>
+      </div>
+    
+  </section>
+
+  <h2>Informationen zum Datensatz</h2>
+<ul class="list--tablelist block">
+  
+  <li>
+    <div class="cell">
+      <div class="text--strong">Lizenz:</div>
+    </div>
+    <div class="cell">
+      <a href='/datensaetze?license_id=dl-de-zero-2.0'
+      alt="Andere Datensätze mit der Lizenz dl-de-zero-2.0">Datenlizenz Deutschland – Zero – Version 2.0 (dl-de-zero-2.0)</a> |
+      <a href="https://www.govdata.de/dl-de/zero-2-0" class="extern">zum Lizenztext</a>
+    </div>
+  </li>
+  
+  
+
+
+  
+    <li>
+      <div class="cell">
+        <div class="text--strong">Kategorie:</div>
+      </div>
+      <div class="cell">
+        <ul class="list--horizontal bordered">
+          
+            <li>
+              <a href='/datensaetze?groups=geo' alt="Andere Datensätze der Kategorie Geographie und Stadtplanung">Geographie und Stadtplanung</a>
+            </li>
+          
+        </ul>
+      </div>
+    </li>
+  
+  
+
+
+  <li>
+    <div class="cell">
+      <div class="text--strong">Geographischer Bezug:</div>
+    </div>
+    <div class="cell">
+      
+      
+        <a href='/datensaetze?geographical_coverage=Berlin'
+           alt="Andere Datensätze mit: Geographischer Bezug: Berlin">Berlin</a>
+      
+    </div>
+  </li>
+
+  
+
+
+  <li>
+    <div class="cell">
+      <div class="text--strong">Geographische Granularität:</div>
+    </div>
+    <div class="cell">
+      
+      
+        <a href='/datensaetze?geographical_granularity=Berlin'
+           alt="Andere Datensätze mit: Geographische Granularität: Berlin">Berlin</a>
+      
+    </div>
+  </li>
+
+  
+  
+
+  
+  
+    <li>
+      <div class="cell">
+        <div class="text--strong">High-Value-Dataset-Kategorie:</div>
+      </div>
+      <div class="cell">
+        <a class="extern" href="http://data.europa.eu/bna/c_ac64a52d">Georaum</a>
+      </div>
+    </li>
+  
+
+  
+  
+
+
+  <li>
+    <div class="cell">
+      <div class="text--strong">Zeitliche Granularität:</div>
+    </div>
+    <div class="cell">
+      
+      
+        <a href='/datensaetze?temporal_granularity=Keine'
+           alt="Andere Datensätze mit: Zeitliche Granularität: Keine">Keine</a>
+      
+    </div>
+  </li>
+
+  
+
+
+  <li>
+    <div class="cell">
+      <div class="text--strong">Veröffentlicht:</div>
+    </div>
+    <div class="cell">
+      
+      
+        21.06.2025
+      
+    </div>
+  </li>
+
+  
+
+
+  <li>
+    <div class="cell">
+      <div class="text--strong">Aktualisiert:</div>
+    </div>
+    <div class="cell">
+      
+      
+        31.07.2026
+      
+    </div>
+  </li>
+
+  
+
+
+  <li>
+    <div class="cell">
+      <div class="text--strong">Veröffentlichende Stelle:</div>
+    </div>
+    <div class="cell">
+      
+      
+        <a href='/datensaetze?author_string=Senatsverwaltung+f%C3%BCr+Stadtentwicklung%2C+Bauen+und+Wohnen+Berlin'
+           alt="Andere Datensätze mit: Veröffentlichende Stelle: Senatsverwaltung für Stadtentwicklung, Bauen und Wohnen Berlin">Senatsverwaltung für Stadtentwicklung, Bauen und Wohnen Berlin</a>
+      
+    </div>
+  </li>
+
+  
+
+
+  <li>
+    <div class="cell">
+      <div class="text--strong">Kontaktperson:</div>
+    </div>
+    <div class="cell">
+      
+      
+        Fr. Mahnke
+      
+    </div>
+  </li>
+
+  
+
+
+  <li>
+    <div class="cell">
+      <div class="text--strong">E-Mail Kontakt:</div>
+    </div>
+    <div class="cell">
+      
+      
+        anja.mahnke AT senstadt.berlin.de
+      
+    </div>
+  </li>
+
+  
+  
+    <li>
+      <div class="cell">
+        <div class="text--strong">Schlagworte:</div>
+      </div>
+      <div class="cell">
+        <ul class="list--horizontal bordered">
+          
+            <li><a href='/datensaetze?tags=ATKIS' alt="Andere Datensätze mit dem Schlagwort ATKIS">ATKIS</a></li>
+          
+            <li><a href='/datensaetze?tags=AdVMIS' alt="Andere Datensätze mit dem Schlagwort AdVMIS">AdVMIS</a></li>
+          
+            <li><a href='/datensaetze?tags=Bahn' alt="Andere Datensätze mit dem Schlagwort Bahn">Bahn</a></li>
+          
+            <li><a href='/datensaetze?tags=Bahnstrecke' alt="Andere Datensätze mit dem Schlagwort Bahnstrecke">Bahnstrecke</a></li>
+          
+            <li><a href='/datensaetze?tags=Bahnverkehr' alt="Andere Datensätze mit dem Schlagwort Bahnverkehr">Bahnverkehr</a></li>
+          
+            <li><a href='/datensaetze?tags=Basis-DLM' alt="Andere Datensätze mit dem Schlagwort Basis-DLM">Basis-DLM</a></li>
+          
+            <li><a href='/datensaetze?tags=Baum' alt="Andere Datensätze mit dem Schlagwort Baum">Baum</a></li>
+          
+            <li><a href='/datensaetze?tags=Bauwerke' alt="Andere Datensätze mit dem Schlagwort Bauwerke">Bauwerke</a></li>
+          
+            <li><a href='/datensaetze?tags=Berlin' alt="Andere Datensätze mit dem Schlagwort Berlin">Berlin</a></li>
+          
+            <li><a href='/datensaetze?tags=Bodenschutzrecht' alt="Andere Datensätze mit dem Schlagwort Bodenschutzrecht">Bodenschutzrecht</a></li>
+          
+            <li><a href='/datensaetze?tags=DLM' alt="Andere Datensätze mit dem Schlagwort DLM">DLM</a></li>
+          
+            <li><a href='/datensaetze?tags=Denkmal' alt="Andere Datensätze mit dem Schlagwort Denkmal">Denkmal</a></li>
+          
+            <li><a href='/datensaetze?tags=Denkmalschutz' alt="Andere Datensätze mit dem Schlagwort Denkmalschutz">Denkmalschutz</a></li>
+          
+            <li><a href='/datensaetze?tags=Digitales+Landschaftsmodell' alt="Andere Datensätze mit dem Schlagwort Digitales Landschaftsmodell">Digitales Landschaftsmodell</a></li>
+          
+            <li><a href='/datensaetze?tags=Erholung' alt="Andere Datensätze mit dem Schlagwort Erholung">Erholung</a></li>
+          
+            <li><a href='/datensaetze?tags=Fahrbahn' alt="Andere Datensätze mit dem Schlagwort Fahrbahn">Fahrbahn</a></li>
+          
+            <li><a href='/datensaetze?tags=Fahrbahnachse' alt="Andere Datensätze mit dem Schlagwort Fahrbahnachse">Fahrbahnachse</a></li>
+          
+            <li><a href='/datensaetze?tags=Flugverkehr' alt="Andere Datensätze mit dem Schlagwort Flugverkehr">Flugverkehr</a></li>
+          
+            <li><a href='/datensaetze?tags=Flugverkehrsanlagen' alt="Andere Datensätze mit dem Schlagwort Flugverkehrsanlagen">Flugverkehrsanlagen</a></li>
+          
+            <li><a href='/datensaetze?tags=Freizeit' alt="Andere Datensätze mit dem Schlagwort Freizeit">Freizeit</a></li>
+          
+            <li><a href='/datensaetze?tags=Friedhof' alt="Andere Datensätze mit dem Schlagwort Friedhof">Friedhof</a></li>
+          
+            <li><a href='/datensaetze?tags=F%C3%A4hrverkehr' alt="Andere Datensätze mit dem Schlagwort Fährverkehr">Fährverkehr</a></li>
+          
+            <li><a href='/datensaetze?tags=Gebiet' alt="Andere Datensätze mit dem Schlagwort Gebiet">Gebiet</a></li>
+          
+            <li><a href='/datensaetze?tags=Geodaten' alt="Andere Datensätze mit dem Schlagwort Geodaten">Geodaten</a></li>
+          
+            <li><a href='/datensaetze?tags=Geografische+Bezeichnungen' alt="Andere Datensätze mit dem Schlagwort Geografische Bezeichnungen">Geografische Bezeichnungen</a></li>
+          
+            <li><a href='/datensaetze?tags=Gewerbe' alt="Andere Datensätze mit dem Schlagwort Gewerbe">Gewerbe</a></li>
+          
+            <li><a href='/datensaetze?tags=Gew%C3%A4sser' alt="Andere Datensätze mit dem Schlagwort Gewässer">Gewässer</a></li>
+          
+            <li><a href='/datensaetze?tags=Gew%C3%A4sserachse' alt="Andere Datensätze mit dem Schlagwort Gewässerachse">Gewässerachse</a></li>
+          
+            <li><a href='/datensaetze?tags=Gew%C3%A4ssernetz' alt="Andere Datensätze mit dem Schlagwort Gewässernetz">Gewässernetz</a></li>
+          
+            <li><a href='/datensaetze?tags=Gew%C3%A4sserstationierung' alt="Andere Datensätze mit dem Schlagwort Gewässerstationierung">Gewässerstationierung</a></li>
+          
+            <li><a href='/datensaetze?tags=Gew%C3%A4sserstationierungsachse' alt="Andere Datensätze mit dem Schlagwort Gewässerstationierungsachse">Gewässerstationierungsachse</a></li>
+          
+            <li><a href='/datensaetze?tags=Grenze' alt="Andere Datensätze mit dem Schlagwort Grenze">Grenze</a></li>
+          
+            <li><a href='/datensaetze?tags=Grenzlinie' alt="Andere Datensätze mit dem Schlagwort Grenzlinie">Grenzlinie</a></li>
+          
+            <li><a href='/datensaetze?tags=Grube' alt="Andere Datensätze mit dem Schlagwort Grube">Grube</a></li>
+          
+            <li><a href='/datensaetze?tags=Hafen' alt="Andere Datensätze mit dem Schlagwort Hafen">Hafen</a></li>
+          
+            <li><a href='/datensaetze?tags=Hafenbecken' alt="Andere Datensätze mit dem Schlagwort Hafenbecken">Hafenbecken</a></li>
+          
+            <li><a href='/datensaetze?tags=H%C3%B6hen' alt="Andere Datensätze mit dem Schlagwort Höhen">Höhen</a></li>
+          
+            <li><a href='/datensaetze?tags=H%C3%B6henlinien' alt="Andere Datensätze mit dem Schlagwort Höhenlinien">Höhenlinien</a></li>
+          
+            <li><a href='/datensaetze?tags=Industrie' alt="Andere Datensätze mit dem Schlagwort Industrie">Industrie</a></li>
+          
+            <li><a href='/datensaetze?tags=Insel' alt="Andere Datensätze mit dem Schlagwort Insel">Insel</a></li>
+          
+            <li><a href='/datensaetze?tags=Karten' alt="Andere Datensätze mit dem Schlagwort Karten">Karten</a></li>
+          
+            <li><a href='/datensaetze?tags=Kommunales+Gebiet' alt="Andere Datensätze mit dem Schlagwort Kommunales Gebiet">Kommunales Gebiet</a></li>
+          
+            <li><a href='/datensaetze?tags=Landwirtschaft' alt="Andere Datensätze mit dem Schlagwort Landwirtschaft">Landwirtschaft</a></li>
+          
+            <li><a href='/datensaetze?tags=Leitung' alt="Andere Datensätze mit dem Schlagwort Leitung">Leitung</a></li>
+          
+            <li><a href='/datensaetze?tags=Moor' alt="Andere Datensätze mit dem Schlagwort Moor">Moor</a></li>
+          
+            <li><a href='/datensaetze?tags=Naturschutzrecht' alt="Andere Datensätze mit dem Schlagwort Naturschutzrecht">Naturschutzrecht</a></li>
+          
+            <li><a href='/datensaetze?tags=Ortslage' alt="Andere Datensätze mit dem Schlagwort Ortslage">Ortslage</a></li>
+          
+            <li><a href='/datensaetze?tags=Pfad' alt="Andere Datensätze mit dem Schlagwort Pfad">Pfad</a></li>
+          
+            <li><a href='/datensaetze?tags=Platz' alt="Andere Datensätze mit dem Schlagwort Platz">Platz</a></li>
+          
+            <li><a href='/datensaetze?tags=Pr%C3%A4sentationsmodell' alt="Andere Datensätze mit dem Schlagwort Präsentationsmodell">Präsentationsmodell</a></li>
+          
+            <li><a href='/datensaetze?tags=Sachdaten' alt="Andere Datensätze mit dem Schlagwort Sachdaten">Sachdaten</a></li>
+          
+            <li><a href='/datensaetze?tags=Schifffahrtslinie' alt="Andere Datensätze mit dem Schlagwort Schifffahrtslinie">Schifffahrtslinie</a></li>
+          
+            <li><a href='/datensaetze?tags=Schiffsverkehr' alt="Andere Datensätze mit dem Schlagwort Schiffsverkehr">Schiffsverkehr</a></li>
+          
+            <li><a href='/datensaetze?tags=Schleuse' alt="Andere Datensätze mit dem Schlagwort Schleuse">Schleuse</a></li>
+          
+            <li><a href='/datensaetze?tags=Schutzzone' alt="Andere Datensätze mit dem Schlagwort Schutzzone">Schutzzone</a></li>
+          
+            <li><a href='/datensaetze?tags=Schwebebahn' alt="Andere Datensätze mit dem Schlagwort Schwebebahn">Schwebebahn</a></li>
+          
+            <li><a href='/datensaetze?tags=Seilbahn' alt="Andere Datensätze mit dem Schlagwort Seilbahn">Seilbahn</a></li>
+          
+            <li><a href='/datensaetze?tags=Siedlung' alt="Andere Datensätze mit dem Schlagwort Siedlung">Siedlung</a></li>
+          
+            <li><a href='/datensaetze?tags=Speicherbauwerk' alt="Andere Datensätze mit dem Schlagwort Speicherbauwerk">Speicherbauwerk</a></li>
+          
+            <li><a href='/datensaetze?tags=Sport' alt="Andere Datensätze mit dem Schlagwort Sport">Sport</a></li>
+          
+            <li><a href='/datensaetze?tags=Steig' alt="Andere Datensätze mit dem Schlagwort Steig">Steig</a></li>
+          
+            <li><a href='/datensaetze?tags=Steinbruch' alt="Andere Datensätze mit dem Schlagwort Steinbruch">Steinbruch</a></li>
+          
+            <li><a href='/datensaetze?tags=Stra%C3%9Fenachsen' alt="Andere Datensätze mit dem Schlagwort Straßenachsen">Straßenachsen</a></li>
+          
+            <li><a href='/datensaetze?tags=Stra%C3%9Fenverkehr' alt="Andere Datensätze mit dem Schlagwort Straßenverkehr">Straßenverkehr</a></li>
+          
+            <li><a href='/datensaetze?tags=Sumpf' alt="Andere Datensätze mit dem Schlagwort Sumpf">Sumpf</a></li>
+          
+            <li><a href='/datensaetze?tags=Tagebau' alt="Andere Datensätze mit dem Schlagwort Tagebau">Tagebau</a></li>
+          
+            <li><a href='/datensaetze?tags=Tats%C3%A4chliche+Nutzung' alt="Andere Datensätze mit dem Schlagwort Tatsächliche Nutzung">Tatsächliche Nutzung</a></li>
+          
+            <li><a href='/datensaetze?tags=Transportanlage' alt="Andere Datensätze mit dem Schlagwort Transportanlage">Transportanlage</a></li>
+          
+            <li><a href='/datensaetze?tags=Turm' alt="Andere Datensätze mit dem Schlagwort Turm">Turm</a></li>
+          
+            <li><a href='/datensaetze?tags=Umweltschutzrecht' alt="Andere Datensätze mit dem Schlagwort Umweltschutzrecht">Umweltschutzrecht</a></li>
+          
+            <li><a href='/datensaetze?tags=Unland' alt="Andere Datensätze mit dem Schlagwort Unland">Unland</a></li>
+          
+            <li><a href='/datensaetze?tags=Vegetation' alt="Andere Datensätze mit dem Schlagwort Vegetation">Vegetation</a></li>
+          
+            <li><a href='/datensaetze?tags=Vegetationsmerkmal' alt="Andere Datensätze mit dem Schlagwort Vegetationsmerkmal">Vegetationsmerkmal</a></li>
+          
+            <li><a href='/datensaetze?tags=Verkehr' alt="Andere Datensätze mit dem Schlagwort Verkehr">Verkehr</a></li>
+          
+            <li><a href='/datensaetze?tags=Verkehrsnetze' alt="Andere Datensätze mit dem Schlagwort Verkehrsnetze">Verkehrsnetze</a></li>
+          
+            <li><a href='/datensaetze?tags=Verwaltungseinheiten' alt="Andere Datensätze mit dem Schlagwort Verwaltungseinheiten">Verwaltungseinheiten</a></li>
+          
+            <li><a href='/datensaetze?tags=Vorratsbeh%C3%A4lter' alt="Andere Datensätze mit dem Schlagwort Vorratsbehälter">Vorratsbehälter</a></li>
+          
+            <li><a href='/datensaetze?tags=Wald' alt="Andere Datensätze mit dem Schlagwort Wald">Wald</a></li>
+          
+            <li><a href='/datensaetze?tags=Weg' alt="Andere Datensätze mit dem Schlagwort Weg">Weg</a></li>
+          
+            <li><a href='/datensaetze?tags=Wohnbaufl%C3%A4che' alt="Andere Datensätze mit dem Schlagwort Wohnbaufläche">Wohnbaufläche</a></li>
+          
+            <li><a href='/datensaetze?tags=atkis' alt="Andere Datensätze mit dem Schlagwort atkis">atkis</a></li>
+          
+            <li><a href='/datensaetze?tags=dlm' alt="Andere Datensätze mit dem Schlagwort dlm">dlm</a></li>
+          
+            <li><a href='/datensaetze?tags=historisch' alt="Andere Datensätze mit dem Schlagwort historisch">historisch</a></li>
+          
+            <li><a href='/datensaetze?tags=infoFeatureAccessService' alt="Andere Datensätze mit dem Schlagwort infoFeatureAccessService">infoFeatureAccessService</a></li>
+          
+            <li><a href='/datensaetze?tags=inspireidentifiziert' alt="Andere Datensätze mit dem Schlagwort inspireidentifiziert">inspireidentifiziert</a></li>
+          
+            <li><a href='/datensaetze?tags=vegetationslos' alt="Andere Datensätze mit dem Schlagwort vegetationslos">vegetationslos</a></li>
+          
+        </ul>
+      </div>
+    </li>
+  
+  
+    <li>
+      <div class="cell">
+        <div class="text--strong">Metadaten Letzte Änderung</div>
+      </div>
+      <div>2026-08-26T05:32:23.669784</div>
+    </li>
+  
+  
+    <li>
+      <div class="cell">
+        <div class="text--strong">Metadaten erstellt</div>
+      </div>
+      <div>2025-12-18T15:30:00.007337</div>
+    </li>
+  
+</ul>
+
+
+  
+
+
+
+
+
+
+  
+
+<div class="fullwidth panel--heavy">
+  <div class="fullwidth__inner block">
+    <h2 class="title">Ressourcen</h2>
+    
+      
+        
+          
+            
+
+<div class="modul-download panel--white block--halfgap">
+  <div class="left">
+    <div class="dp-resource-header">
+      <h3 class="title">Endpunkt-Beschreibung des WFS-Service</h3>
+      <div class="dp-resource-icon-mini dp-resource-gis">
+        <div class="dp-resource-icon-label">
+          WFS
+        </div>
+      </div>
+    </div>
+    
+      <p class="text">
+        Maschinenlesbare Endpunkt-Beschreibung des WFS-Service. Weitere Informationen unter https://www.ogc.org/standards/wfs
+      </p>
+    
+    <ul class="caption list--clean">
+      <li class="doc-type">Format: WFS</li>
+    </ul>
+  </div>
+  <div class="right">
+    <a class="link button button--extern" href="https://gdi.berlin.de/services/wfs/atkis?request=GetCapabilities&amp;service=WFS" target="_blank">Zur Ressource</a>
+  </div>
+</div>
+          
+            
+
+<div class="modul-download panel--white block--halfgap">
+  <div class="left">
+    <div class="dp-resource-header">
+      <h3 class="title">API-Endpunkt des WFS-Service</h3>
+      <div class="dp-resource-icon-mini dp-resource-gis">
+        <div class="dp-resource-icon-label">
+          WFS
+        </div>
+      </div>
+    </div>
+    
+      <p class="text">
+        API-Endpunkt des WFS-Service. Weitere Informationen unter https://www.ogc.org/standards/wfs
+      </p>
+    
+    <ul class="caption list--clean">
+      <li class="doc-type">Format: WFS</li>
+    </ul>
+  </div>
+  <div class="right">
+    <a class="link button button--extern" href="https://gdi.berlin.de/services/wfs/atkis" target="_blank">Zur Ressource</a>
+  </div>
+</div>
+          
+          
+            
+            
+              
+
+<div class="modul-download panel--colored block--halfgap">
+  <div class="left">
+    <div class="dp-resource-header">
+      <h3 class="title">Ansicht im WFS-Explorer</h3>
+      <div class="dp-resource-icon-mini dp-resource-website">
+        <div class="dp-resource-icon-label">
+          HTML
+        </div>
+      </div>
+    </div>
+    
+      <p class="text">
+        Darstellung der Daten als Karte und Tabelle
+      </p>
+    
+    <ul class="caption list--clean">
+      <li class="doc-type">Format: HTML</li>
+    </ul>
+  </div>
+  <div class="right">
+    <a class="link button button--extern" href="https://wfsexplorer.odis-berlin.de/?wfs=https://gdi.berlin.de/services/wfs/atkis" target="_blank">Zur Ressource</a>
+  </div>
+</div>
+            
+          
+          
+            
+            
+          
+        
+      
+    
+  </div>
+</div>
+</div>
+<div id="layout-grid__area--marginal" role="complementary" class="marginal"></div>
+
+
+
+        
+        <div id="layout-grid__area--contentfooter">
+            
+<div id="content-footer" role="contentinfo">
+    <h2 class="aural">Weitere Informationen zu diesem Auftritt</h2>
+    <div class="content-footer__brand">
+    </div>
+    <a class="to-top" href="#top">Zum Seitenanfang</a>
+    <nav class="content-footer__links" aria-label="Weiterführende Links">
+    <ul class="js-collapse-palm">
+      <li class="initial-open">
+        <h3 class="heading js-trigger" aria-expanded="true">Berlin Open Data</h3>
+        <ul>
+          <li><a href="/impressum">Impressum</a></li>
+          <li><a href="/contact">Kontakt</a></li>
+          <li><a href="/datenschutzerklaerung">Datenschutz</a></li>
+          <li><a href="/barrierefreiheitserklaerung">Digitale Barrierefreiheit</a></li>
+        </ul>
+      </li>
+      <li>
+        <h3 class="heading js-trigger">Hilfe</h3>
+        <ul>
+                    <li><a href="https://berlinonline.github.io/open-data-handbuch/#glossar" class="extern">Glossar</a></li>
+          <li><a href="/datenbereitsteller">Datenbereitsteller</a></li>
+        </ul>
+      </li>
+    </ul>
+    </nav>
+</div>
+         </div>
+
+    </div>
+    <!-- 
+*********************************************************
+PORTAL FOOTER AREA
+**********************************************************
+-->
+<footer id="footer" class="screendefault" data-nosnippet="true">
+        <!-- -->
+        <div class="footer__brand">
+            <div class="image__image">
+            <a href="https://www.berlin.de/" title="Berlin.de Startseite">
+                <img alt="Berlin.de zur Startseite" src="https://www.berlin.de/i9f/r1/images/logo_berlin_m_negativ.svg">
+            </a>
+            </div>
+                    </div>
+        <!-- -->
+        <nav class="footer__links" aria-label="Weitere Bereiche auf Berlin.de">
+            <h2 class="aural">Weitere Informationen zu Berlin.de</h2>
+            <ul class="js-collapse-palm">
+                <li>
+                    <!-- -->
+    <h3 class="heading js-trigger">Service</h3><ul><li><a href="https://service.berlin.de/app/">Service-App</a></li><li><a href="https://service.berlin.de/terminvereinbarung/">Termin vereinbaren</a></li><li><a href="https://www.berlin.de/moderne-verwaltung/buergerservice/am-telefon/">Bürgertelefon 115</a></li><li><a href="https://www.berlin.de/polizei/service/so-erreichen-sie-uns/artikel.532842.php">Notdienste</a></li><li><a href="https://www.berlin.de/ea/">Gewerbeservice</a></li></ul>
+                </li>
+                <li>
+                    <!-- -->
+    <h3 class="heading js-trigger">Behörden</h3><ul><li><a href="https://service.berlin.de/behoerden/">Behörden A-Z</a></li><li><a href="https://service.berlin.de/senatsverwaltungen/">Senatsverwaltungen</a></li><li><a href="https://service.berlin.de/bezirksaemter/">Bezirksämter</a></li><li><a href="https://service.berlin.de/standorte/buergeraemter/">Bürgerämter</a></li><li><a href="https://service.berlin.de/jobcenter/">Jobcenter</a></li><li><a href="https://www.berlin.de/einwanderung/">Einwanderungsamt</a></li></ul>
+                </li>
+                <li>
+                    <!-- -->
+    <h3 class="heading js-trigger">Politik &amp; Verwaltung</h3><ul><li><a href="https://www.berlin.de/rbmskzl/politik/senat/">Landesregierung</a></li><li><a href="https://www.berlin.de/karriereportal/">Karriere im Land Berlin</a></li><li><a href="https://mein.berlin.de">Bürgerbeteiligung</a></li><li><a href="https://daten.berlin.de">Open Data</a></li><li><a href="https://www.berlin.de/vergabeplattform/">Vergaben</a></li></ul>
+                </li>
+                <li>
+                    <!-- -->
+    <h3 class="heading js-trigger">Aktuelles</h3><ul><li><a href="https://www.berlin.de/presse/">Pressemitteilungen</a></li><li><a href="https://www.berlin.de/polizei/polizeimeldungen/">Polizeimeldungen</a></li><li><a href="https://www.berlin.de/land/kalender/">Veranstaltungen</a></li><li><a href="https://www.berlin.de/ukraine/">Ukraine</a></li><li><a href="https://www.berlin.de/baerenhitze/">Hitzeschutz</a></li></ul>
+                </li>
+                <li>
+                    <!-- -->
+    <h3 class="heading js-trigger">Themen</h3><ul><li><a href="https://www.berlin.de/rbmskzl/fokusthemen/">Fokusthemen</a></li><li><a href="https://verkehrswende.berlin.de/">Berliner Verkehrswende</a></li><li><a href="https://www.berlin.de/moderne-verwaltung/">Moderne Verwaltung</a></li><li><a href="https://www.berlin.de/sen/wohnen/service/mietspiegel/">Mietspiegel</a></li><li><a href="https://berlin.de/grundsteuer" target="_blank" title=" (Öffnet in neuem Fenster)" rel="noreferrer">Grundsteuer</a></li></ul>
+                </li>
+                <li>
+                    <!-- -->
+    <h3 class="heading js-trigger">Weitere Informationen</h3><ul><li><a href="https://www.berlin.de/kultur-und-tickets/">Kultur &amp; Ausgehen</a></li><li><a href="https://www.berlin.de/tourismus/">Tourismus</a></li><li><a href="https://www.berlin.de/wirtschaft/">Wirtschaft</a></li><li><a href="https://www.berlin.de/special/">Stadtleben</a></li><li><a href="https://www.berlin.de/stadtplan/">Stadtplan</a></li></ul>
+                </li>
+            </ul>
+        </nav>
+
+        <div class="footer__claim">
+                        <p>
+                Berlin.de ist ein Angebot des Landes Berlin.            </p>
+        </div>
+    </footer></div>
+  </div>
+
+    
+    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","pathPrefix":"","currentPath":"datensaetze\/atkis-basis-dlm-prasentationsdienst-wfs-d4316e05","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"en"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"ajaxTrustedUrl":{"\/search\/node":true},"data_tunnel":{"datenregister_uri":"https:\/\/datenregister.berlin.de"},"user":{"uid":0,"permissionsHash":"24d470c8d14888c99ea23ed9552ceaaa1c7f9d50d13f79b6c4f2be3367f7097c"}}</script>
+<script src="/core/assets/vendor/jquery/jquery.min.js?v=3.7.1"></script>
+<script src="/core/misc/drupalSettingsLoader.js?v=10.6.10"></script>
+<script src="/core/misc/drupal.js?v=10.6.10"></script>
+<script src="/core/misc/drupal.init.js?v=10.6.10"></script>
+<script src="https://www.berlin.de/i9f/r1/bundle/berlin_assetservice.js"></script>
+<script src="/modules/contrib/data_tunnel/js/tagify.min.js?ti82ad"></script>
+<script src="/modules/contrib/data_tunnel/js/ckan_snippets.js?ti82ad"></script>
+
+  </body>
+</html>

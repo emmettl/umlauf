@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
+import { BridgeOutline } from './BridgeOutline'
 import { formatServiceTime, type NetworkSnapshot } from '@motionstudies/core/domain/network'
 import { localPoint, localTrainPoint, screenPoint, verticalConnections, type Point, type StationData } from './ostkreuz-model'
 
@@ -6,6 +7,7 @@ const COLORS:Record<string,string>={S41:'#ffb36b',S42:'#82e5c5',S3:'#9dbce9',S5:
 export function OstkreuzScene({network,time,playing,rate,onTime,onInspectCall}:{network:NetworkSnapshot;time:number;playing:boolean;rate:number;onTime:(time:number)=>void;onInspectCall:(time:number)=>void}){
  const [data,setData]=useState<StationData>(),[error,setError]=useState(''),[separation,setSeparation]=useState(1),[mode,setMode]=useState<'all'|'stairs'|'lifts'>('all'),[selected,setSelected]=useState<string>()
  useEffect(()=>{const controller=new AbortController();fetch(`${import.meta.env.BASE_URL}data/ostkreuz.json`,{signal:controller.signal}).then(async r=>{if(!r.ok)throw new Error('Unable to load Ostkreuz');return r.json()}).then(setData).catch(e=>{if(e.name!=='AbortError')setError(e.message)});return()=>controller.abort()},[])
+ const [bridgeVisible,setBridgeVisible]=useState(true),[bridgeStatus,setBridgeStatus]=useState<'loading'|'ready'|'unavailable'>('loading')
  const clock=useRef(time);useEffect(()=>{clock.current=time},[time])
  useEffect(()=>{
   if(!playing)return
@@ -42,12 +44,13 @@ export function OstkreuzScene({network,time,playing,rate,onTime,onInspectCall}:{
   return point&&Math.hypot(...point)<260?[{call,platform,point}]:[]
  })
  return <div className="ostkreuz-view" data-testid="ostkreuz-scene">
-  <div className="section-intro"><p>THE RING MEETS THE CITY</p><h2>Ostkreuz</h2><span>Above, the Ring. Below, the east–west railway.</span></div>
+  <div className="section-intro"><p>THE RING MEETS THE CITY</p><h2>Ostkreuz</h2><span>Above, the Ring. Below, the east–west railway.</span><label className="bridge-control"><input type="checkbox" checked={bridgeVisible} disabled={bridgeStatus!=='ready'} onChange={e=>setBridgeVisible(e.target.checked)}/> Official bridge outline{bridgeStatus==='unavailable'?' · unavailable':''}</label></div>
   <svg className="station-section" viewBox="0 0 900 650" role="img" aria-labelledby="ostkreuz-title ostkreuz-description">
    <title id="ostkreuz-title">Ostkreuz relative platform levels</title><desc id="ostkreuz-description">Selected scheduled S-Bahn calls on lower platforms 3 to 6 and upper platforms 11 and 12. Level separation and platform glyphs are illustrative. Connector lines join GTFS pathway endpoints.</desc>
    <defs><clipPath id="station-crop"><rect x="85" y="115" width="730" height="425" rx="30"/></clipPath><filter id="train-glow"><feGaussianBlur stdDeviation="3"/></filter></defs>
    <g clipPath="url(#station-crop)">
     {[0,2].map(level=><g key={level}><path d={line([[-220,-130],[220,-130],[220,130],[-220,130],[-220,-130]],level)} fill={level?'#192521':'#15212c'} fillOpacity=".28" stroke="#8ca99e" strokeOpacity=".1"/>{scene.tracks.filter(t=>t.level===level).map((t,i)=><path key={i} d={line(t.points,level)} fill="none" stroke={COLORS[t.route]} strokeWidth="1" opacity=".35"/>)}</g>)}
+    <BridgeOutline separation={separation} visible={bridgeVisible} onStatus={setBridgeStatus}/>
     {connectors.map((c,i)=><path key={i} data-connector-mode={c.mode} d={`M${project(scene.points.get(c.from.id)!,scene.levels.get(c.from.levelId!)!).join(',')}L${project(scene.points.get(c.to.id)!,scene.levels.get(c.to.levelId!)!).join(',')}`} stroke={c.mode===5?'#b2efd8':'#c8c0a7'} strokeWidth={c.mode===5?1.7:1} strokeOpacity={separation?0.5:0.15} strokeDasharray={c.mode===5?undefined:'3 4'}><title>{c.mode===5?'Lift':c.mode===4?'Escalator':'Stairs'} · {c.sourceIds.length} source direction record(s)</title></path>)}
     {scene.platforms.map(p=>{
      const point=scene.points.get(p.id)!,level=scene.levels.get(p.levelId!)!,[x,y]=project(point,level)
@@ -66,6 +69,6 @@ export function OstkreuzScene({network,time,playing,rate,onTime,onInspectCall}:{
   </svg>
   <div className="section-controls"><label>Separate levels <input aria-label="Separate platform levels" type="range" min="0" max="1" step="0.01" value={separation} onChange={e=>setSeparation(Number(e.target.value))}/></label><div className="connection-controls" aria-label="Station connections">{(['all','stairs','lifts'] as const).map(m=><button key={m} aria-pressed={mode===m} onClick={()=>setMode(m)}>{m==='all'?'All links':m==='stairs'?'Stairs / escalators':'Lifts'}</button>)}</div></div>
   <div className="station-departures"><div><h3>Scheduled calls</h3><label className="platform-select"><span className="sr-only">Choose platform</span><select aria-label="Choose platform" value={selected??''} onChange={e=>setSelected(e.target.value||undefined)}><option value="">All platforms</option>{scene.platforms.map(p=><option value={p.id} key={p.id}>Platform {p.platform}</option>)}</select></label><span>{formatServiceTime(time)}</span></div>{upcoming.map(call=><button className="section-call" key={call.id} aria-label={`${call.route} at ${formatServiceTime(call.arrival)}, platform ${scene.platforms.find(p=>p.id===call.platformId)?.platform}`} onClick={()=>onInspectCall(call.arrival)}><span style={{color:COLORS[call.route]}}>{call.route}</span><span>Platform {scene.platforms.find(p=>p.id===call.platformId)?.platform}</span><time>{formatServiceTime(call.arrival)}</time></button>)}{!upcoming.length&&<p>No further calls in this opening.</p>}</div>
-  <p className="section-note">A source-based station study, not live wayfinding. Only the selected S-Bahn services are shown; lift availability is not known.</p>
+  <p className="section-note">Bridge outline: Berlin ATKIS. Vertical spacing is illustrative. Selected scheduled S-Bahn services; lift availability is unknown.</p>
  </div>
 }

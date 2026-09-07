@@ -1,0 +1,25 @@
+{
+  "bbox": [
+    13.459,
+    52.496,
+    13.48,
+    52.511
+  ],
+  "layers": {
+    "b11_ax_bahnstrecke_l.json": 103,
+    "b12_ax_bauwerkimverkehrsbereich_l.json": 13,
+    "c07_ax_bauwerkimverkehrsbereich_f.json": 8,
+    "c09_ax_bahnverkehrsanlage_f.json": 2
+  },
+  "coordinateDimensions": [
+    2
+  ],
+  "selectedRailId": "b11_ax_bahnstrecke_l.DEBEATKB1bq0000X",
+  "selectedBridgeId": "c07_ax_bauwerkimverkehrsbereich_f.DEBEATKB10000iKp",
+  "relation": {
+    "field": "hdu",
+    "target": "DEBEATKB10000iKp"
+  },
+  "metricRailHeights": "not present in the inspected 2D geometries or attributes",
+  "stationPolygons": "Both station polygons are class Bahnhof; neither establishes individual platform extents."
+}

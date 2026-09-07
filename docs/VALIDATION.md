@@ -1,5 +1,11 @@
 # First proof validation — 7 September 2026
 
+## Official bridge outline
+
+Thirteen source/model tests and twelve desktop/phone Chromium checks pass locally, together with typecheck, lint, package-boundary validation and production build. The bridge check verifies exact retained source hashes and polygon geometry, the reviewed railway-to-bridge relation, the station artifact digest and explicit absence of metric height. Browser coverage adds outline switching and station usability when its optional source fails.
+
+The 2,605-byte bridge artifact compresses to 1,234 bytes and loads only with Ostkreuz. Production JavaScript is 327.07 KB gzip. Final 1440×1000 and 390×844 screenshots were visually inspected with no document overflow. Recompiling ATKIS offline produced identical bytes: SHA-256 `498c89f83dd4bf55094d582736a0fec9b50c3dca2a6862c0321c27d1eecdea3c`. The earlier renderer warnings and physical-device validation limits still apply. Hosted CI for this extension is tracked independently of these local checks.
+
 ## Ostkreuz extension
 
 Twelve source/model tests and ten Chromium desktop/phone browser checks now pass locally, along with typecheck, lint, package-boundary validation and production build. New checks cover exact station/network provenance, platform/route assignments, connector identity and mode filtering, display-only level separation, on-demand station loading, platform selection, call-time jumps and shared-clock continuity when switching scenes. Both rendered station layouts were visually inspected. Production JavaScript is approximately 327 KB gzip; the lazy station artifact is 27.2 KB gzip.

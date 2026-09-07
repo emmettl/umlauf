@@ -1,0 +1,73 @@
+{
+  "publisher": "Senatsverwaltung für Stadtentwicklung, Bauen und Wohnen Berlin",
+  "license": "dl-de-zero-2.0",
+  "licenseUrl": "https://www.govdata.de/dl-de/zero-2-0",
+  "catalogueUpdated": "2026-07-31",
+  "bbox": [
+    13.459,
+    52.496,
+    13.48,
+    52.511
+  ],
+  "bboxCrs": "OGC:CRS84 (longitude, latitude)",
+  "outputCrs": "EPSG:4326; returned GeoJSON coordinates verified longitude, latitude",
+  "note": "GetFeature selects intersecting features, not clipped geometries. Response timestamps and record beg values are not a survey date. retainedAt records archival copy time.",
+  "files": [
+    {
+      "file": "atkis-capabilities.xml",
+      "url": "https://gdi.berlin.de/services/wfs/atkis?request=GetCapabilities&service=WFS",
+      "retainedAt": "2026-09-07T15:34:36.533Z",
+      "responseTime": null,
+      "bytes": 175061,
+      "sha256": "365b805b59acdc140c01ed4739261d824dc03e5ab442d5e8f04e016a3b7abfe6"
+    },
+    {
+      "file": "atkis-licence.html",
+      "url": "https://daten.berlin.de/datensaetze/atkis-basis-dlm-prasentationsdienst-wfs-d4316e05",
+      "retainedAt": "2026-09-07T15:34:36.534Z",
+      "responseTime": null,
+      "bytes": 43205,
+      "sha256": "cb71f8505bee266fd6ae49f8317ae4d0382010c48d9690c8ff59d213efd5183b"
+    },
+    {
+      "file": "atkis-schema.xml",
+      "url": "https://gdi.berlin.de/services/wfs/atkis?service=WFS&version=2.0.0&request=DescribeFeatureType&typeNames=atkis:b11_ax_bahnstrecke_l,atkis:c07_ax_bauwerkimverkehrsbereich_f",
+      "retainedAt": "2026-09-07T15:34:36.534Z",
+      "responseTime": null,
+      "bytes": 9233,
+      "sha256": "ab1ad421adb897720d0ccb9b34c7af821ae1124267de94380a99251419fe980b"
+    },
+    {
+      "file": "b11_ax_bahnstrecke_l.json",
+      "url": "https://gdi.berlin.de/services/wfs/atkis?service=WFS&version=2.0.0&request=GetFeature&typeNames=atkis%3Ab11_ax_bahnstrecke_l&srsName=EPSG%3A4326&bbox=13.459%2C52.496%2C13.48%2C52.511%2Curn%3Aogc%3Adef%3Acrs%3AOGC%3A1.3%3ACRS84&outputFormat=application%2Fjson&count=1000",
+      "retainedAt": "2026-09-07T15:34:36.532Z",
+      "responseTime": "2026-09-07T15:32:05.782Z",
+      "bytes": 78132,
+      "sha256": "c371ad794715faab1dab08be9b940bde709a58939f9696f9fe3af8ab49b07102"
+    },
+    {
+      "file": "b12_ax_bauwerkimverkehrsbereich_l.json",
+      "url": "https://gdi.berlin.de/services/wfs/atkis?service=WFS&version=2.0.0&request=GetFeature&typeNames=atkis%3Ab12_ax_bauwerkimverkehrsbereich_l&srsName=EPSG%3A4326&bbox=13.459%2C52.496%2C13.48%2C52.511%2Curn%3Aogc%3Adef%3Acrs%3AOGC%3A1.3%3ACRS84&outputFormat=application%2Fjson&count=1000",
+      "retainedAt": "2026-09-07T15:34:36.532Z",
+      "responseTime": "2026-09-07T15:32:05.923Z",
+      "bytes": 7860,
+      "sha256": "c8ae87b72f4af3b764ed8a3f1eb4d450b3122d801baf1a04ac39bcec73f70192"
+    },
+    {
+      "file": "c07_ax_bauwerkimverkehrsbereich_f.json",
+      "url": "https://gdi.berlin.de/services/wfs/atkis?service=WFS&version=2.0.0&request=GetFeature&typeNames=atkis%3Ac07_ax_bauwerkimverkehrsbereich_f&srsName=EPSG%3A4326&bbox=13.459%2C52.496%2C13.48%2C52.511%2Curn%3Aogc%3Adef%3Acrs%3AOGC%3A1.3%3ACRS84&outputFormat=application%2Fjson&count=1000",
+      "retainedAt": "2026-09-07T15:34:36.533Z",
+      "responseTime": "2026-09-07T15:32:05.876Z",
+      "bytes": 6592,
+      "sha256": "081e4d3c4bc5c784fef292fe317224d4cd4916d8b7c28063b2eb2a37480cb4dd"
+    },
+    {
+      "file": "c09_ax_bahnverkehrsanlage_f.json",
+      "url": "https://gdi.berlin.de/services/wfs/atkis?service=WFS&version=2.0.0&request=GetFeature&typeNames=atkis%3Ac09_ax_bahnverkehrsanlage_f&srsName=EPSG%3A4326&bbox=13.459%2C52.496%2C13.48%2C52.511%2Curn%3Aogc%3Adef%3Acrs%3AOGC%3A1.3%3ACRS84&outputFormat=application%2Fjson&count=1000",
+      "retainedAt": "2026-09-07T15:34:36.533Z",
+      "responseTime": "2026-09-07T15:32:05.845Z",
+      "bytes": 1964,
+      "sha256": "a35d4a50014eeea6a890bf52477f7299431cf9dbd0683c9bf445d790dff9fdcd"
+    }
+  ]
+}

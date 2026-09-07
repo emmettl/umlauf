@@ -11,6 +11,7 @@ First source-pinned interactive proof, 7 September 2026. An independent, unnumbe
 - Ring & Crossings: S1/S2, S3/S5/S7/S9, U2/U6/U8 and M10, cropped to the central field. 585 retained journeys across 12 line names, 397 platform/stop records and 1,170 directed path segments.
 - Continuous geography-to-circulation diagram, preserving the source stop/path identities and timetable clock. A radial transformation makes the Ring approximately circular and applies the same transformation to the crossing network.
 - Ostkreuz relative interchange view: upper Ringbahn and lower east–west S-Bahn platforms, adjustable level separation, source connector filters, platform selection and scheduled-call jumps on the same clock. Station data loads only when this view is opened.
+- Optional official Ostkreuz bridge outline from Berlin ATKIS, linked to its retained Ringbahn source record. Footprint coordinates are supplied; vertical placement remains illustrative.
 - Play/pause, time scrubbing, playback speed, pan/zoom/reset, station selection and upcoming calls, journey following, labels and source disclosure. Reduced-motion preferences open paused.
 
 ## Run
@@ -41,7 +42,7 @@ See [data contract](docs/DATA.md), [machine-readable audit](docs/source-audit.js
 
 The [Ostkreuz source contract](docs/OSTKREUZ.md) describes relative levels, connector semantics and the limits of the station view. It is a source-based artwork, not live wayfinding.
 
-Full source copies live in ignored `sources/`. With the exact archive restored:
+The small [ATKIS source package](docs/ATKIS.md) is committed and rebuilds offline with `npm run data:atkis`. It uses Germany Zero 2.0. The full VBB archive and DB reference plan live in ignored `sources/`. With the exact VBB archive restored:
 
 ```sh
 npm run data:compile

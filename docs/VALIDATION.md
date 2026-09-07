@@ -1,5 +1,13 @@
 # First proof validation — 7 September 2026
 
+## Ostkreuz extension
+
+Twelve source/model tests and ten Chromium desktop/phone browser checks now pass locally, along with typecheck, lint, package-boundary validation and production build. New checks cover exact station/network provenance, platform/route assignments, connector identity and mode filtering, display-only level separation, on-demand station loading, platform selection, call-time jumps and shared-clock continuity when switching scenes. Both rendered station layouts were visually inspected. Production JavaScript is approximately 327 KB gzip; the lazy station artifact is 27.2 KB gzip.
+
+The initial CI run passed its Node 24 build/source checks but spent over thirteen minutes downloading optional fonts from a slow Ubuntu mirror. It was cancelled for diagnosis. The next configuration installs Chromium without the redundant OS/font bundle (runtime libraries were already present in the job log), with five-minute installer and twelve-minute job timeouts. Local success and subsequent hosted CI results remain separate evidence.
+
+## Original opening
+
 - Nine Node tests passed: source pin and artifact digest, exact source lineage and monotonic calls, complete layout identities, network payload budget, clockwise/counter-clockwise winding for every Ringbahn trip, replacement-bus exclusion, repeated-station loop matching, sparse-segment projection and refusal of unmatched stops.
 - Six Chromium browser checks passed across desktop and phone emulation: rendered canvas, nonzero Ringbahn counts, pause/scrub, composition switching, diagram transition with the same clock, source disclosure and focus return, reduced-motion pause. Screenshots of ring and crossing views were visually reviewed; the camera was adjusted to fit the complete Ring.
 - Typecheck, lint, independent-package boundary check and production build passed. All four shared packages are exact registry installs at `0.1.0-alpha.2`; no workspace links or unpublished source imports.

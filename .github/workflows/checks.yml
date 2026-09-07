@@ -5,6 +5,7 @@ permissions:
 jobs:
   check:
     runs-on: ubuntu-latest
+    timeout-minutes: 12
     steps:
       - uses: actions/checkout@v7
       - uses: actions/setup-node@v7
@@ -14,5 +15,8 @@ jobs:
       - run: npm install --global npm@11.19.0 --ignore-scripts
       - run: npm ci
       - run: npm run typecheck && npm run lint && npm run check:boundary && npm test && npm run build
-      - run: npx playwright install --with-deps chromium
+      # Runtime libraries are present on the hosted Ubuntu image. Avoid the
+      # optional font downloads that stalled on the Ubuntu package mirror.
+      - run: npx playwright install chromium
+        timeout-minutes: 5
       - run: npm run test:browser -- --workers=2

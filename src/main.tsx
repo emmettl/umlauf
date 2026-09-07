@@ -4,3 +4,5 @@ import { App } from './App'
 import { BERLIN_EDITION } from './edition'
 import './style.css'
 mountMotionStudy(BERLIN_EDITION,<App/>)
+
+import "./ostkreuz.css"

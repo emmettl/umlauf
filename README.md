@@ -10,6 +10,7 @@ First source-pinned interactive proof, 7 September 2026. An independent, unnumbe
 - Ring view: S41 clockwise and S42 counter-clockwise, with 36 timetable trips per direction across the opening and overlapping trips at its edges.
 - Ring & Crossings: S1/S2, S3/S5/S7/S9, U2/U6/U8 and M10, cropped to the central field. 585 retained journeys across 12 line names, 397 platform/stop records and 1,170 directed path segments.
 - Continuous geography-to-circulation diagram, preserving the source stop/path identities and timetable clock. A radial transformation makes the Ring approximately circular and applies the same transformation to the crossing network.
+- Ostkreuz relative interchange view: upper Ringbahn and lower east–west S-Bahn platforms, adjustable level separation, source connector filters, platform selection and scheduled-call jumps on the same clock. Station data loads only when this view is opened.
 - Play/pause, time scrubbing, playback speed, pan/zoom/reset, station selection and upcoming calls, journey following, labels and source disclosure. Reduced-motion preferences open paused.
 
 ## Run
@@ -37,6 +38,8 @@ Browser checks require Playwright Chromium (`npx playwright install chromium`). 
 ## Sources and reproducibility
 
 See [data contract](docs/DATA.md), [machine-readable audit](docs/source-audit.json), [licence receipt](docs/licence-receipt.json) and [next work](docs/ROADMAP.md). The derived timetable/geometry carries **VBB attribution and CC BY 4.0**; code licensing does not replace source-data rights.
+
+The [Ostkreuz source contract](docs/OSTKREUZ.md) describes relative levels, connector semantics and the limits of the station view. It is a source-based artwork, not live wayfinding.
 
 Full source copies live in ignored `sources/`. With the exact archive restored:
 

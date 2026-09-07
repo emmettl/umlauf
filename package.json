@@ -34,10 +34,11 @@
     "dev": "vite --host 127.0.0.1 --port 4177",
     "build": "tsc -p . && vite build",
     "typecheck": "tsc -p .",
-    "data:compile": "node scripts/compile-vbb.mjs && node scripts/compile-layout.mjs",
+    "data:compile": "node scripts/compile-vbb.mjs && node scripts/compile-layout.mjs && node scripts/compile-ostkreuz.mjs",
     "test": "node --test tests/*.test.mjs",
     "test:browser": "playwright test",
     "lint": "oxlint src scripts tests",
-    "check:boundary": "node scripts/check-boundary.mjs"
+    "check:boundary": "node scripts/check-boundary.mjs",
+    "data:ostkreuz": "node scripts/compile-ostkreuz.mjs"
   }
 }

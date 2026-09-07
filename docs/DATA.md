@@ -22,6 +22,6 @@ The first pass found a 223.8m S2 mismatch at Lichtenrade, outside the opening. R
 
 ## Evidence limits
 
-Motion is timetable interpolation, not observed position. Count panels are scheduled journeys, not vehicle occupancy or passenger demand. The ground plane does not encode rail elevation: all track vertical states are unknown in lineage. There is no terrain, building, water or engineered-interchange section in this opening. Realtime corrections remain outside the source contract until a matched, measured recording is available.
+Motion is timetable interpolation, not observed position. Count panels are scheduled journeys, not vehicle occupancy or passenger demand. The network ground plane does not encode rail elevation: network track vertical states remain unknown in lineage. The separate [Ostkreuz relative section](OSTKREUZ.md) adds source platform levels and endpoint connections with illustrative separation. No metre heights, terrain, buildings or water geometry have been established. Realtime corrections remain outside the source contract until a matched, measured recording is available.
 
 The complete compiled network is 836,314 bytes, about 123,483 bytes gzip. Its diagram is about 49,056 bytes gzip. The production JavaScript includes the shared Three.js renderer; see the build output for its separate transfer cost. These sizes do not prove a physical phone frame budget.

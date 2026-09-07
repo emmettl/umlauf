@@ -23,3 +23,12 @@ The [AdV Basis-DLM object catalogue](https://www.adv-online.de/sites/default/fil
 Berlin's [DGM catalogue](https://daten.berlin.de/datensaetze/atkis-dgm-digitales-gelandemodell-fa02f9e1) confirms that the one-metre raster excludes buildings and other objects. The [publisher](https://www.berlin.de/sen/stadt/stadtdaten/geoinformation/landesvermessung/geotopographie-atkis/dgm-digitale-gelaendemodelle/) identifies ETRS89/UTM 33N and DHHN2016. Ground elevations cannot substitute for railway deck heights. The older DGM catalogue slug now returns 404 and has been corrected in the series docs. No terrain tile was compiled in this pass.
 
 The next metric gate therefore needs an engineering section or suitably classified survey data with a height datum and observation date. LoD2 roofs or a surface model alone would also need a defensible distinction between roof, platform and track before they could clear rail heights.
+
+Before using a new source, resolve four concrete questions:
+
+1. Does it identify top of rail, platform surface and bridge deck separately for tracks 3–6 and 11/12, with plan positions that can be joined to this station?
+2. What are the observation/as-built date, horizontal CRS, vertical datum, units and stated accuracy? How are changes since the observation represented?
+3. Does it cover the approaches far enough to establish gradients, including gaps under roofs or bridges? Unobserved sections must stay unknown.
+4. Do the supplied terms permit retaining the source and publishing a transformed static geometry? Record the exact file, rights statement and checksum before compilation.
+
+These are an acquisition checklist; no request has been sent to a provider.

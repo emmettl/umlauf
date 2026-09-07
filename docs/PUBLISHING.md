@@ -2,7 +2,13 @@
 
 Live site: https://emmettl.github.io/umlauf-pages/
 
-The user explicitly approved publishing the site and bundled datasets publicly while retaining the private source repository. GitHub returned HTTP 422 when enabling Pages directly on the private repository because of its current plan. The public deployment repository [emmettl/umlauf-pages](https://github.com/emmettl/umlauf-pages) therefore contains only compiled HTML/CSS/JavaScript, the favicon, approved data artifacts and `.nojekyll`. Private source files, ignored source archives, credentials and source Git history were not copied.
+The initial approval covered publishing the site and bundled datasets publicly while retaining a private source repository. GitHub returned HTTP 422 when enabling Pages directly on the private repository because of its current plan. The public deployment repository [emmettl/umlauf-pages](https://github.com/emmettl/umlauf-pages) therefore contains only compiled HTML/CSS/JavaScript, the favicon, approved data artifacts and `.nojekyll`. Private source files, ignored source archives, credentials and source Git history were not copied.
+
+## Source visibility
+
+On 7 September 2026 the user separately confirmed making [emmettl/umlauf](https://github.com/emmettl/umlauf) and its full Git history public. GitHub now reports `visibility: public` and `private: false`. A focused scan of all 168 historical blobs found no credential patterns; retained VBB archives, the DB reference PDF and engineering HTML are ignored and absent from Git history. This scan is a bounded check, not a security guarantee.
+
+The live Pages URL and deployment repository remain unchanged. The owner-only Sites review retains its existing access settings. Source visibility does not automatically deploy new website builds.
 
 ## Exact release
 
@@ -16,4 +22,4 @@ The public release includes the station-aware active-journey count correction. T
 
 ## Updating Pages
 
-Choose a source commit with successful checks, retrieve its `umlauf-preview` artifact, and inspect the complete static file list. Replace the deployment repository's previous build assets and data with that artifact, retaining `.nojekyll`; do not copy the source checkout or its Git history. Commit the deployment artifact with the source commit in the message, then push its `main` branch. Verify the Pages deployment succeeds and the served files match the chosen artifact. Record the source and deployment commits here. The private repository's original `pages.yml` workflow does not deploy this separate repository and remains unused.
+Choose a source commit with successful checks, retrieve its `umlauf-preview` artifact, and inspect the complete static file list. Replace the deployment repository's previous build assets and data with that artifact, retaining `.nojekyll`; do not copy the source checkout or its Git history. Commit the deployment artifact with the source commit in the message, then push its `main` branch. Verify the Pages deployment succeeds and the served files match the chosen artifact. Record the source and deployment commits here. The source repository's original `pages.yml` workflow does not deploy this separate repository and remains unused.

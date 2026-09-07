@@ -1,0 +1,30 @@
+{
+  "provider": "Senatsverwaltung für Stadtentwicklung, Bauen und Wohnen Berlin",
+  "licence": "Germany Zero 2.0",
+  "catalogue": "https://daten.berlin.de/datensaetze/atkis-basis-dlm-prasentationsdienst-wfs-d4316e05",
+  "crs": "EPSG:4326; GeoJSON longitude, latitude",
+  "bbox": [
+    13.235,
+    52.435,
+    13.525,
+    52.6
+  ],
+  "sources": [
+    {
+      "file": "data/sources/water-20260907/c41_ax_fliessgewaesser_f.json",
+      "url": "https://gdi.berlin.de/services/wfs/atkis?service=WFS&version=2.0.0&request=GetFeature&typeNames=atkis%3Ac41_ax_fliessgewaesser_f&srsName=EPSG%3A4326&bbox=13.235%2C52.435%2C13.525%2C52.600%2Curn%3Aogc%3Adef%3Acrs%3AOGC%3A1.3%3ACRS84&outputFormat=application%2Fjson&count=10000",
+      "retrievedAt": "2026-09-07T18:42:43.921Z",
+      "sha256": "3133995fc0d1de1882219ed2cfdadca971ec160bd706ed17c47ea357036b4ac6",
+      "bytes": 247282,
+      "count": 86
+    },
+    {
+      "file": "data/sources/water-20260907/c42_ax_hafenbecken_f.json",
+      "url": "https://gdi.berlin.de/services/wfs/atkis?service=WFS&version=2.0.0&request=GetFeature&typeNames=atkis%3Ac42_ax_hafenbecken_f&srsName=EPSG%3A4326&bbox=13.235%2C52.435%2C13.525%2C52.600%2Curn%3Aogc%3Adef%3Acrs%3AOGC%3A1.3%3ACRS84&outputFormat=application%2Fjson&count=10000",
+      "retrievedAt": "2026-09-07T18:42:43.971Z",
+      "sha256": "d113ed145e60b418d1615ebca30e322c46b9ec0e5186b9efd9ee7d20f5f66e7f",
+      "bytes": 14862,
+      "count": 18
+    }
+  ]
+}

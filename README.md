@@ -8,6 +8,8 @@ First source-pinned interactive proof, 7 September 2026. An independent, unnumbe
 
 - A real VBB scheduled morning: 07:00–09:00 on 7 September 2026, Europe/Berlin.
 - Ring view: S41 clockwise and S42 counter-clockwise, with 36 timetable trips per direction across the opening and overlapping trips at its edges.
+- Crossing-family controls isolate north–south, east–west, or U-Bahn/tram routes while retaining both Ring directions and the same clock.
+- Official Spree/canal/harbour polygons retain source receipts and island boundaries; water fades out of the authored circulation view.
 - Ring & Crossings: S1/S2, S3/S5/S7/S9, U2/U6/U8 and M10, cropped to the central field. 585 retained journeys across 12 line names, 397 platform/stop records and 1,170 directed path segments.
 - Continuous geography-to-circulation diagram, preserving the source stop/path identities and timetable clock. A radial transformation makes the Ring approximately circular and applies the same transformation to the crossing network.
 - Ostkreuz relative interchange view: upper Ringbahn and lower east–west S-Bahn platforms, adjustable level separation, source connector filters, platform selection and scheduled-call jumps on the same clock. Station data loads only when this view is opened.
@@ -32,6 +34,7 @@ npm run lint
 npm test
 npm run check:boundary
 npm run build
+npm run check:budget
 npm run test:browser
 ```
 
@@ -50,3 +53,7 @@ npm run data:compile
 ```
 
 The compiler refuses an archive with a different SHA-256. Review new releases before updating that pin. Public deployment is not configured in this first proof.
+
+## Review preview and performance
+
+The private review is hosted with Sites, using the checked static build. A manual GitHub Pages workflow is prepared, but the current account plan does not support Pages from this private repository. It does not publish on every push. The page is unnumbered, uses a working title, and requests no search indexing. See [water provenance](docs/WATER.md), [performance protocol](docs/PERFORMANCE.md), and [publication review](docs/REVIEW.md).

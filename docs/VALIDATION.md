@@ -1,3 +1,11 @@
+# Current review validation
+
+The composition/water work passes fourteen source/model tests, package-boundary validation, typecheck, lint and production build. Twenty Chromium desktop/phone checks cover existing station behavior plus crossing families, optional water failure and actual zero-opacity WebGL submissions. New water sources reproduce byte-identically; timetable and circulation bytes remain unchanged.
+
+Compressed opening assets, including optional water, total 545,989 bytes (533.2 KiB), against a 575 KiB gate. Water adds 47,718 gzip bytes and is opt-in/lazy on phones. Ostkreuz scene code is separately loaded. See [PERFORMANCE.md](PERFORMANCE.md) for baseline and review measurements, including the observed water cost and physical-device limits.
+
+The shared alpha.3 renderer fix passed hosted verification in Motion Studies; publication is awaiting explicit npm approval. This Berlin review still consumes exact published alpha.2 packages.
+
 # First proof validation — 7 September 2026
 
 ## Platform inspection

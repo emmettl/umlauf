@@ -1,0 +1,96 @@
+{
+  "capturedAt": "2026-09-07T18:59:46.159Z",
+  "platform": "darwin",
+  "browserVersion": "151.0.7922.34",
+  "settings": {
+    "width": 390,
+    "height": 844,
+    "dpr": 3,
+    "duration": 5000,
+    "fps": 60,
+    "channel": "chromium",
+    "headless": true
+  },
+  "environment": {
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/151.0.7922.34 Safari/537.36",
+    "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (LLVM 10.0.0) (0x0000C0DE)), SwiftShader driver)",
+    "canvas": {
+      "width": 643,
+      "height": 869
+    }
+  },
+  "scenarios": [
+    {
+      "name": "opening",
+      "frames": 297,
+      "meanFps": 59.01,
+      "p50Ms": 16.7,
+      "p95Ms": 16.8,
+      "p99Ms": 33.3,
+      "maxMs": 33.4,
+      "overBudgetPercent": 62.29,
+      "overOneAndHalfBudgetsPercent": 1.68,
+      "mainThreadMilliseconds": {
+        "TaskDuration": 4253.67,
+        "ScriptDuration": 101.87,
+        "LayoutDuration": 3.56,
+        "RecalcStyleDuration": 0
+      },
+      "jsHeapUsedBytes": 16283964
+    },
+    {
+      "name": "crossings",
+      "frames": 144,
+      "meanFps": 28.61,
+      "p50Ms": 33.3,
+      "p95Ms": 50,
+      "p99Ms": 50.1,
+      "maxMs": 50.1,
+      "overBudgetPercent": 96.53,
+      "overOneAndHalfBudgetsPercent": 91.67,
+      "mainThreadMilliseconds": {
+        "TaskDuration": 5116.12,
+        "ScriptDuration": 86.81,
+        "LayoutDuration": 2.73,
+        "RecalcStyleDuration": 0
+      },
+      "jsHeapUsedBytes": 26672736
+    },
+    {
+      "name": "circulation",
+      "frames": 164,
+      "meanFps": 32.69,
+      "p50Ms": 33.3,
+      "p95Ms": 33.4,
+      "p99Ms": 33.4,
+      "maxMs": 33.4,
+      "overBudgetPercent": 92.68,
+      "overOneAndHalfBudgetsPercent": 83.54,
+      "mainThreadMilliseconds": {
+        "TaskDuration": 5074.93,
+        "ScriptDuration": 84.81,
+        "LayoutDuration": 2.79,
+        "RecalcStyleDuration": 0
+      },
+      "jsHeapUsedBytes": 22808012
+    },
+    {
+      "name": "ostkreuz",
+      "frames": 301,
+      "meanFps": 60,
+      "p50Ms": 16.7,
+      "p95Ms": 16.7,
+      "p99Ms": 16.8,
+      "maxMs": 16.8,
+      "overBudgetPercent": 61.79,
+      "overOneAndHalfBudgetsPercent": 0,
+      "mainThreadMilliseconds": {
+        "TaskDuration": 424.62,
+        "ScriptDuration": 229.22,
+        "LayoutDuration": 43.53,
+        "RecalcStyleDuration": 10.2
+      },
+      "jsHeapUsedBytes": 17919908
+    }
+  ]
+}

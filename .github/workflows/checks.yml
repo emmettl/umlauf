@@ -19,4 +19,5 @@ jobs:
       # optional font downloads that stalled on the Ubuntu package mirror.
       - run: npx playwright install chromium
         timeout-minutes: 5
-      - run: npm run test:browser -- --workers=2
+      # WebGL rendering shares the hosted runner's CPU; avoid competing scenes.
+      - run: npm run test:browser -- --workers=1

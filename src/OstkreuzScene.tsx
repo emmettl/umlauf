@@ -1,13 +1,13 @@
-import { useEffect, useMemo, useRef, useState } from 'react'
+import { useEffect, useMemo, useRef, useState, type CSSProperties } from 'react'
 import { BridgeOutline } from './BridgeOutline'
 import { PlatformFacts } from './PlatformFacts'
 import { formatServiceTime, type NetworkSnapshot } from '@motionstudies/core/domain/network'
 import { localPoint, localTrainPoint, screenPoint, verticalConnections, type Point, type StationData } from './ostkreuz-model'
 
 const COLORS:Record<string,string>={S41:'#ffb36b',S42:'#82e5c5',S3:'#9dbce9',S5:'#c2a8ea',S7:'#9dbce9'}
-export function OstkreuzScene({network,time,playing,rate,onTime,onInspectCall}:{network:NetworkSnapshot;time:number;playing:boolean;rate:number;onTime:(time:number)=>void;onInspectCall:(time:number)=>void}){
+export function OstkreuzScene({network,time,playing,rate,onTime,onInspectCall,onReady,onError,entrance=1}:{network:NetworkSnapshot;time:number;playing:boolean;rate:number;onTime:(time:number)=>void;onInspectCall:(time:number)=>void;onReady:(origin:Point)=>void;onError:(message:string)=>void;entrance?:number}){
  const [data,setData]=useState<StationData>(),[error,setError]=useState(''),[separation,setSeparation]=useState(1),[mode,setMode]=useState<'all'|'stairs'|'lifts'>('all'),[selected,setSelected]=useState<string>()
- useEffect(()=>{const controller=new AbortController();fetch(`${import.meta.env.BASE_URL}data/ostkreuz.json`,{signal:controller.signal}).then(async r=>{if(!r.ok)throw new Error('Unable to load Ostkreuz');return r.json()}).then(setData).catch(e=>{if(e.name!=='AbortError')setError(e.message)});return()=>controller.abort()},[])
+ useEffect(()=>{const controller=new AbortController();fetch(`${import.meta.env.BASE_URL}data/ostkreuz.json`,{signal:controller.signal}).then(async r=>{if(!r.ok)throw new Error('Unable to load Ostkreuz');return r.json()}).then((next:StationData)=>{if(next.metadata.sourceSha256!==network.metadata.sourceSha256||next.metadata.serviceDate!==network.metadata.serviceDate)throw new Error('Station data does not match this timetable.');setData(next);onReady(next.origin)}).catch(e=>{if(e.name!=='AbortError'){setError(e.message);onError(e.message)}});return()=>controller.abort()},[network.metadata.sourceSha256,network.metadata.serviceDate,onReady,onError])
  const [bridgeVisible,setBridgeVisible]=useState(true),[bridgeStatus,setBridgeStatus]=useState<'loading'|'ready'|'unavailable'>('loading')
  const [zoom,setZoom]=useState(1)
  const clock=useRef(time);useEffect(()=>{clock.current=time},[time])
@@ -37,7 +37,7 @@ export function OstkreuzScene({network,time,playing,rate,onTime,onInspectCall}:{
  if(error)return <div className="section-loading" role="alert">{error}</div>
  if(!data||!scene)return <div className="section-loading" role="status">Preparing Ostkreuz…</div>
  if(data.metadata.sourceSha256!==network.metadata.sourceSha256||data.metadata.serviceDate!==network.metadata.serviceDate)return <div className="section-loading" role="alert">Station data does not match this timetable.</div>
- const project=(point:Point,level:number)=>screenPoint(point,level,separation)
+ const project=(point:Point,level:number)=>screenPoint(point,level,separation*entrance,entrance)
  const line=(points:readonly Point[],level:number)=>points.map((p,i)=>`${i?'L':'M'}${project(p,level).join(',')}`).join(' ')
  const selectedPlatform=scene.platforms.find(p=>p.id===selected)
  const focus=zoom>1&&selectedPlatform?project(scene.points.get(selectedPlatform.id)!,scene.levels.get(selectedPlatform.levelId!)!):[450,340]
@@ -47,14 +47,14 @@ export function OstkreuzScene({network,time,playing,rate,onTime,onInspectCall}:{
   const train=scene.trains.get(call.trainId)!,platform=scene.platforms.find(p=>p.id===call.platformId)!,point=localTrainPoint(train,time,network,data.origin)
   return point&&Math.hypot(...point)<260?[{call,platform,point}]:[]
  })
- return <div className="ostkreuz-view" data-testid="ostkreuz-scene">
+ return <div className="ostkreuz-view" data-testid="ostkreuz-scene" data-entrance={entrance.toFixed(3)} style={{'--arrival':entrance} as CSSProperties}>
   <div className="section-intro"><p>THE RING MEETS THE CITY</p><h2>Ostkreuz</h2><span>Above, the Ring. Below, the east–west railway.</span><div className="section-view-tools"><label className="bridge-control"><input type="checkbox" checked={bridgeVisible} disabled={bridgeStatus!=='ready'} onChange={e=>setBridgeVisible(e.target.checked)}/> Official bridge outline{bridgeStatus==='unavailable'?' · unavailable':''}</label><div className="section-zoom" aria-label="Station view"><button aria-label="Zoom into station" disabled={zoom>=3} onClick={()=>setZoom(z=>Math.min(3,z+0.5))}>+</button><output aria-label="Station zoom">{zoom.toFixed(1)}×</output><button aria-label="Zoom out of station" disabled={zoom<=1} onClick={()=>setZoom(z=>Math.max(1,z-0.5))}>−</button><button aria-label="Reset station view" onClick={()=>setZoom(1)}>↺</button></div></div></div>
   <svg className="station-section" viewBox="50 105 800 480" role="img" aria-labelledby="ostkreuz-title ostkreuz-description">
    <title id="ostkreuz-title">Ostkreuz relative platform levels</title><desc id="ostkreuz-description">Selected scheduled S-Bahn calls on lower platforms 3 to 6 and upper platforms 11 and 12. Level separation and platform glyphs are illustrative. Connector lines join GTFS pathway endpoints.</desc>
    <defs><clipPath id="station-crop"><rect x="85" y="115" width="730" height="425" rx="30"/></clipPath><filter id="train-glow"><feGaussianBlur stdDeviation="3"/></filter></defs>
    <g clipPath="url(#station-crop)"><g data-testid="station-camera" transform={`translate(450 340) scale(${zoom}) translate(${-focus[0]} ${-focus[1]})`}>
     {[0,2].map(level=><g key={level}><path d={line([[-220,-130],[220,-130],[220,130],[-220,130],[-220,-130]],level)} fill={level?'#192521':'#15212c'} fillOpacity=".28" stroke="#8ca99e" strokeOpacity=".1"/>{scene.tracks.filter(t=>t.level===level).map((t,i)=><path key={i} d={line(t.points,level)} fill="none" stroke={COLORS[t.route]} strokeWidth="1" opacity=".35"/>)}</g>)}
-    <BridgeOutline separation={separation} visible={bridgeVisible} onStatus={setBridgeStatus}/>
+    <BridgeOutline separation={separation*entrance} tilt={entrance} visible={bridgeVisible} onStatus={setBridgeStatus}/>
     {connectors.map((c,i)=><path key={i} data-connector-mode={c.mode} d={`M${project(scene.points.get(c.from.id)!,scene.levels.get(c.from.levelId!)!).join(',')}L${project(scene.points.get(c.to.id)!,scene.levels.get(c.to.levelId!)!).join(',')}`} stroke={c.mode===5?'#b2efd8':'#c8c0a7'} strokeWidth={c.mode===5?1.7:1} strokeOpacity={separation?0.5:0.15} strokeDasharray={c.mode===5?undefined:'3 4'}><title>{c.mode===5?'Lift':c.mode===4?'Escalator':'Stairs'} · {c.sourceIds.length} source direction record(s)</title></path>)}
     {scene.platforms.map(p=>{
      const point=scene.points.get(p.id)!,level=scene.levels.get(p.levelId!)!,[x,y]=project(point,level)
@@ -68,7 +68,7 @@ export function OstkreuzScene({network,time,playing,rate,onTime,onInspectCall}:{
     })}
     {present.map(({call,platform,point})=>{const [x,y]=project(point,scene.levels.get(platform.levelId!)!),color=COLORS[call.route];return <g key={call.id}><circle cx={x} cy={y} r="7" fill={color} opacity=".65" filter="url(#train-glow)"/><circle cx={x} cy={y} r="3" fill={color}/><text x={x+10} y={y-9} fill={color} fontSize="11">{call.route}</text></g>})}
    </g></g>
-   {zoom===1&&<g className="level-labels"><text x="94" y={238-100*separation}>UPPER · 11 / 12</text><text x="94" y="492">LOWER · 3 / 4 / 5 / 6</text></g>}
+   {zoom===1&&<g className="level-labels"><text x="94" y={238-100*separation*entrance}>UPPER · 11 / 12</text><text x="94" y="492">LOWER · 3 / 4 / 5 / 6</text></g>}
    <text x="450" y="572" textAnchor="middle" className="section-caption">RELATIVE LEVELS · SPACING IS ILLUSTRATIVE</text>
   </svg>
   <div className="section-controls"><label>Separate levels <input aria-label="Separate platform levels" type="range" min="0" max="1" step="0.01" value={separation} onChange={e=>setSeparation(Number(e.target.value))}/></label><div className="connection-controls" aria-label="Station connections">{(['all','stairs','lifts'] as const).map(m=><button key={m} aria-pressed={mode===m} onClick={()=>setMode(m)}>{m==='all'?'All links':m==='stairs'?'Stairs / escalators':'Lifts'}</button>)}</div></div>

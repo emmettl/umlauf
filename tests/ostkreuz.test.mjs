@@ -39,3 +39,14 @@ test('level separation changes only display height, not geography or timetable p
  assert.equal(screenPoint(point,2,0)[1]-screenPoint(point,2,1)[1],144)
  assert.deepEqual(samplePath([[0,0],[10,0],[10,30]],.5),[10,10])
 })
+test('station arrival tilts the same geography before exposing relative levels',()=>{
+ const point=[70,-35]
+ assert.deepEqual(screenPoint(point,0,0,0),[544.5,387.25])
+ assert.deepEqual(screenPoint(point,2,0,0),screenPoint(point,0,0,0))
+ for(let i=0;i<=10;i++){
+  const t=i/10,lower=screenPoint(point,0,t,t),upper=screenPoint(point,2,t,t)
+  assert.ok(lower.every(Number.isFinite)&&upper.every(Number.isFinite))
+  assert.equal(lower[0],upper[0]);assert.ok(Math.abs(lower[1]-upper[1]-144*t)<1e-10)
+ }
+ assert.deepEqual(screenPoint(point,2,1,1),screenPoint(point,2,1))
+})

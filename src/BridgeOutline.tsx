@@ -6,7 +6,7 @@ interface BridgeData {
  origin:Point
  bridge:{id:string;geometry:{type:'MultiPolygon';coordinates:Point[][][]}}
 }
-export function BridgeOutline({separation,visible,onStatus}:{separation:number;visible:boolean;onStatus:(status:'ready'|'unavailable')=>void}){
+export function BridgeOutline({separation,visible,onStatus,tilt=1}:{separation:number;tilt?:number;visible:boolean;onStatus:(status:'ready'|'unavailable')=>void}){
  const [data,setData]=useState<BridgeData>()
  useEffect(()=>{
   const controller=new AbortController()
@@ -21,6 +21,6 @@ export function BridgeOutline({separation,visible,onStatus}:{separation:number;v
  if(!data||!visible)return null
  return <g data-testid="official-bridge-outline" data-source-id={data.bridge.id} pointerEvents="none">
   <title>Official ATKIS bridge footprint; vertical placement is illustrative</title>
-  {data.bridge.geometry.coordinates.map((polygon,i)=><path key={i} d={polygon.map(ring=>ring.map((point,j)=>`${j?'L':'M'}${screenPoint(localPoint(point,data.origin),2,separation).join(',')}`).join(' ')+'Z').join(' ')} fill="#b8d9ba" fillOpacity=".09" fillRule="evenodd" stroke="#b8d9ba" strokeOpacity=".65" strokeWidth="1.4"/>)}
+  {data.bridge.geometry.coordinates.map((polygon,i)=><path key={i} d={polygon.map(ring=>ring.map((point,j)=>`${j?'L':'M'}${screenPoint(localPoint(point,data.origin),2,separation,tilt).join(',')}`).join(' ')+'Z').join(' ')} fill="#b8d9ba" fillOpacity=".09" fillRule="evenodd" stroke="#b8d9ba" strokeOpacity=".65" strokeWidth="1.4"/>)}
  </g>
 }

@@ -27,3 +27,7 @@ Motion is timetable interpolation, not observed position. Count panels are sched
 The [ATKIS bridge layer](ATKIS.md) adds an official two-dimensional footprint to the relative station scene. Its independent Germany Zero 2.0 source package is committed in `data/sources/atkis-20260907/`; it does not alter VBB lineage or establish metre heights.
 
 The complete compiled network is 836,314 bytes, about 123,483 bytes gzip. Its diagram is about 49,056 bytes gzip. The production JavaScript includes the shared Three.js renderer; see the build output for its separate transfer cost. These sizes do not prove a physical phone frame budget.
+
+## City-to-station continuity
+
+The Ostkreuz approach uses the origin retained in the station artifact. The city first returns to geographic coordinates, then the camera approaches that origin before a visual blend into the local SVG view. The local view interpolates from a north-up plan into its authored oblique projection, then exposes relative GTFS levels. This is an authored transition between views, not a surveyed 3D model or an assertion of rail-deck heights. Network, layout, station, bridge and water artifact bytes remain unchanged.

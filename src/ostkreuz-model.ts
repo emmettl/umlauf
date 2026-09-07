@@ -14,8 +14,9 @@ export type Point=readonly[number,number]
 export function localPoint(point:Point,origin:Point):Point {
  return [(point[0]-origin[0])*111320*Math.cos(origin[1]*Math.PI/180),(point[1]-origin[1])*111320]
 }
-export function screenPoint(point:Point,level:number,separation:number):Point {
- return [450+point[0]*1.28+point[1]*0.82,382+point[0]*0.43-point[1]*0.7-level*72*separation]
+export function screenPoint(point:Point,level:number,separation:number,tilt=1):Point {
+ const x=450+point[0]*1.35,y=340-point[1]*1.35
+ return [x+(450+point[0]*1.28+point[1]*0.82-x)*tilt,y+(382+point[0]*0.43-point[1]*0.7-y)*tilt-level*72*separation]
 }
 export function samplePath(points:readonly Point[],progress:number):Point {
  if(points.length<2)throw new Error('A route path needs at least two points')

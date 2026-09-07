@@ -1,5 +1,11 @@
 # Current review validation
 
+## Ostkreuz travel and zoom labels · 7 September 2026
+
+Sixteen source/model tests and thirty desktop/phone browser checks cover the reversible approach, interrupted travel, preserved time/direction/crossing family/diagram setting, lazy station loading, slow and failed source recovery, reduced motion, and additional station-label textures rendered at closer zoom while train labels remain off. The city canvas is removed after arrival; exactly one scene owns playback. The transition, final station view and closer map labels were visually inspected at 1440×1000 and 390×844.
+
+Typecheck, lint, public-package boundary checks and the production build pass. The opening including optional water is 550,441 bytes gzip against the 588,800-byte gate. Data artifacts and exact alpha.3 package pins are unchanged. Physical-phone performance and measured interchange heights remain open.
+
 ## Two-direction composition · 7 September 2026
 
 Fifteen source/model tests and twenty-two desktop/phone browser checks pass, together with typecheck, lint, public-package boundary checks and the production build. Direction inspection preserves the paused clock, diagram mix and crossing services. Every Ring journey retains its winding and meets its authored platform endpoints. Comparison with the prior artifact confirms all non-Ring geometry and both shared Ring platforms are unchanged. Source network bytes are unchanged. Desktop (1440×1000) and phone (390×844) renders were inspected; the diagram uses a square extent centred on its authored origin so the complete Ring remains in view.

@@ -22,7 +22,7 @@ The first pass found a 223.8m S2 mismatch at Lichtenrade, outside the opening. R
 
 ## Evidence limits
 
-Motion is timetable interpolation, not observed position. Count panels are scheduled journeys, not vehicle occupancy or passenger demand. The network ground plane does not encode rail elevation: network track vertical states remain unknown in lineage. The separate [Ostkreuz relative section](OSTKREUZ.md) adds source platform levels and endpoint connections with illustrative separation. No metre heights, terrain, buildings or water geometry have been established. Realtime corrections remain outside the source contract until a matched, measured recording is available.
+Motion is timetable interpolation, not observed position. Count panels are scheduled journeys, not vehicle occupancy or passenger demand. The network ground plane does not encode rail elevation: network track vertical states remain unknown in lineage. The separate [Ostkreuz relative section](OSTKREUZ.md) adds source platform levels and endpoint connections with illustrative separation. Absolute rail elevations, terrain, buildings and water geometry remain unestablished. The [engineering review](ENGINEERING.md) now supplies cited net built lengths and platform heights above rail as explanatory facts; these do not set geometry. Realtime corrections remain outside the source contract until a matched, measured recording is available.
 
 The [ATKIS bridge layer](ATKIS.md) adds an official two-dimensional footprint to the relative station scene. Its independent Germany Zero 2.0 source package is committed in `data/sources/atkis-20260907/`; it does not alter VBB lineage or establish metre heights.
 

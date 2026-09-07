@@ -56,4 +56,4 @@ The compiler refuses an archive with a different SHA-256. Review new releases be
 
 ## Review preview and performance
 
-The private review is hosted with Sites, using the checked static build. A manual GitHub Pages workflow is prepared, but the current account plan does not support Pages from this private repository. It does not publish on every push. The page is unnumbered, uses a working title, and requests no search indexing. See [water provenance](docs/WATER.md), [performance protocol](docs/PERFORMANCE.md), and [publication review](docs/REVIEW.md).
+A private Sites review is prepared from the checked static build; source upload and deployment are awaiting explicit authorization. A manual GitHub Pages workflow is prepared, but the current account plan does not support Pages from this private repository. It does not publish on every push. The page is unnumbered, uses a working title, and requests no search indexing. See [water provenance](docs/WATER.md), [performance protocol](docs/PERFORMANCE.md), and [publication review](docs/REVIEW.md).

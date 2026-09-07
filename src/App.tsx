@@ -60,7 +60,11 @@ function Study({data,layout}:{data:NetworkSnapshot;layout:SpatialLayoutSnapshot}
   const network=useMemo(()=>subset(data,crossings,family,direction),[data,crossings,family,direction])
   const reference=useMemo(()=>({...network,bounds:{...network.bounds,minLongitude:network.bounds.minLongitude-(phone?0.04:0),maxLongitude:network.bounds.maxLongitude+(phone?0.04:0)}}),[network,phone])
   const stations=useMemo(()=>buildStationIndex(network),[network])
-  const active=network.trains.filter(t=>t.start<=time && t.end>=time)
+  const countableTrains=useMemo(()=>{
+    const stationTrainIds=station?new Set(stations.find(s=>s.name===station.name)?.trainIds??[]):undefined
+    return network.trains.filter(t=>!stationTrainIds||stationTrainIds.has(t.id))
+  },[network,station,stations])
+  const active=countableTrains.filter(t=>t.realtime?.status!=='cancelled' && t.start<=time && t.end>=time)
   const ringCounts=['S41','S42'].map(route=>data.trains.filter(t=>t.route===route&&t.start<=time&&t.end>=time).length)
   const calls=useMemo(()=>{
     if(!station)return []

@@ -1,5 +1,11 @@
 # Current review validation
 
+## Two-direction composition · 7 September 2026
+
+Fifteen source/model tests and twenty-two desktop/phone browser checks pass, together with typecheck, lint, public-package boundary checks and the production build. Direction inspection preserves the paused clock, diagram mix and crossing services. Every Ring journey retains its winding and meets its authored platform endpoints. Comparison with the prior artifact confirms all non-Ring geometry and both shared Ring platforms are unchanged. Source network bytes are unchanged. Desktop (1440×1000) and phone (390×844) renders were inspected; the diagram uses a square extent centred on its authored origin so the complete Ring remains in view.
+
+Current layout SHA-256: `d46933ee0caed37861b398a56b621b00346f623fefcc499bbaf31b7fbf63b480`. Opening payload including optional water: 549,716 bytes gzip against the 588,800-byte gate. Physical-device acceptance remains pending.
+
 The composition/water work passes fourteen source/model tests, package-boundary validation, typecheck, lint and production build. Twenty Chromium desktop/phone checks cover existing station behavior plus crossing families, optional water failure and actual zero-opacity WebGL submissions. New water sources reproduce byte-identically; timetable and circulation bytes remain unchanged.
 
 Compressed opening assets, including optional water, total 546,106 bytes (533.3 KiB), against a 575 KiB gate. Water adds 47,718 gzip bytes and is opt-in/lazy on phones. Ostkreuz scene code is separately loaded. See [PERFORMANCE.md](PERFORMANCE.md) for baseline and review measurements, including the observed water cost and physical-device limits.

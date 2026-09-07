@@ -4,9 +4,9 @@ Umlauf is a working title; this is an unnumbered review preview. The current edi
 
 ## Composition to review
 
-1. Open The ring: does the clockwise/counter-clockwise pair establish an inside?
+1. Open The ring: does the clockwise/counter-clockwise pair establish an inside? Select S41 or S42 to isolate its scheduled journeys, then Both directions to restore the pair. Counts continue to describe both scheduled directions; the field total describes visible journeys.
 2. Open Ring & crossings: compare north–south, east–west and U-Bahn/tram. Each retains the Ring and the same clock.
-3. Move Geography → circulation. The railway uses the authored radial transformation; geographic water fades away rather than pretending to be a measured diagram.
+3. Move Geography → circulation. Amber S41 separates outside mint S42 in the authored diagram, returning to shared platforms where the source shares one stop. The railway uses the authored radial transformation; geographic water fades away rather than pretending to be a measured diagram.
 4. Open Ostkreuz, select platform 11, then platform 3, and separate the relative levels. Source-backed platform facts and the bridge footprint remain distinct from unresolved rail heights.
 
 ## Publication review

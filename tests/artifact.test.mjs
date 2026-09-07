@@ -40,3 +40,22 @@ test('every Ringbahn trip travels in its labelled circulation direction',()=>{
   assert.ok(t.route==='S41'?winding< -6:winding>6,`${t.id} ${t.route}: ${winding}`)
  }
 })
+test('direction spacing preserves shared platforms and continuous Ring calls',()=>{
+ const routes=new Map()
+ for(const t of data.trains.filter(t=>['S41','S42'].includes(t.route)))for(const [i] of t.stops){if(!routes.has(i))routes.set(i,new Set());routes.get(i).add(t.route)}
+ const shared=[...routes].filter(([,r])=>r.size===2).map(([i])=>i)
+ assert.equal(shared.length,2)
+ for(const t of data.trains.filter(t=>['S41','S42'].includes(t.route))){
+  let winding=0
+  for(let i=0;i<t.pathSegments.length;i++){
+   const path=layout.paths[t.pathSegments[i]],from=layout.stops[t.stops[i][0]].slice(1),to=layout.stops[t.stops[i+1][0]].slice(1)
+   const distance=(a,b)=>Math.hypot(a[0]-b[0],a[1]-b[1])
+   assert.ok(distance(path[0],from)<0.006,`${t.route} departure remains at its platform`)
+   assert.ok(distance(path.at(-1),to)<0.006,`${t.route} arrival remains at its platform`)
+   for(let j=1;j<path.length;j++){const delta=Math.atan2(path[j][1],path[j][0])-Math.atan2(path[j-1][1],path[j-1][0]);winding+=Math.atan2(Math.sin(delta),Math.cos(delta))}
+  }
+  assert.ok(t.route==='S41'?winding< -6:winding>6)
+ }
+ const means=['S41','S42'].map(route=>{const stops=[...routes].filter(([,r])=>r.size===1&&r.has(route)).map(([i])=>layout.stops[i]);return stops.reduce((sum,s)=>sum+Math.hypot(s[1],s[2]),0)/stops.length})
+ assert.ok(means[0]-means[1]>0.07,'the two directions are visibly separated in the diagram')
+})

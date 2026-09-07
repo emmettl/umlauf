@@ -1,0 +1,78 @@
+{
+  "reviewedAt": "2026-09-07",
+  "sources": [
+    {
+      "id": "infrago",
+      "url": "https://www.dbinfrago.com/web/bahnhoefe/leistungen/stationsnutzung/stationshalt/stationsausstattung/Berlin-Ostkreuz-12670236",
+      "localPath": "sources/engineering/infrago.html",
+      "retainedAt": "2026-09-07T15:46:40.658Z",
+      "sha256": "b826ce614602e746f782b79bcb9e7f87141eb67c83815445c4c5ccee8b092c71",
+      "bytes": 265114
+    },
+    {
+      "id": "schuessler",
+      "url": "https://www.schuessler-plan.de/de/projekte/s-bahnhof-ostkreuz-berlin.html",
+      "localPath": "sources/engineering/schuessler.html",
+      "retainedAt": "2026-09-07T15:46:40.983Z",
+      "sha256": "5520b6b16440f75b39888538d4d7ba674b3061325a9a96ffc896549797499503",
+      "bytes": 18954
+    },
+    {
+      "id": "kl",
+      "url": "https://kl-ing.de/projekte/projekt/umbau-s-bahnhof-ostkreuz-berlin/",
+      "localPath": "sources/engineering/kl.html",
+      "retainedAt": "2026-09-07T15:46:44.615Z",
+      "sha256": "b746d455eee331bd73a4ddd02ffb56768f61cb2a854587f64beb89bb07f29a55",
+      "bytes": 19197
+    }
+  ],
+  "platformSource": "infrago",
+  "platformSourceAsOf": "2026-08-31",
+  "stationNumber": "4809",
+  "platforms": [
+    {
+      "track": "3",
+      "netBuiltLengthMetres": 152,
+      "heightAboveRailCm": 96,
+      "absoluteElevationMetres": null,
+      "geographicExtent": null
+    },
+    {
+      "track": "4",
+      "netBuiltLengthMetres": 152,
+      "heightAboveRailCm": 96,
+      "absoluteElevationMetres": null,
+      "geographicExtent": null
+    },
+    {
+      "track": "5",
+      "netBuiltLengthMetres": 152,
+      "heightAboveRailCm": 96,
+      "absoluteElevationMetres": null,
+      "geographicExtent": null
+    },
+    {
+      "track": "6",
+      "netBuiltLengthMetres": 152,
+      "heightAboveRailCm": 96,
+      "absoluteElevationMetres": null,
+      "geographicExtent": null
+    },
+    {
+      "track": "11",
+      "netBuiltLengthMetres": 155,
+      "heightAboveRailCm": 96,
+      "absoluteElevationMetres": null,
+      "geographicExtent": null
+    },
+    {
+      "track": "12",
+      "netBuiltLengthMetres": 155,
+      "heightAboveRailCm": 96,
+      "absoluteElevationMetres": null,
+      "geographicExtent": null
+    }
+  ],
+  "use": "Selected cited factual dimensions, manually checked against the retained official table. No full table, artwork or source HTML republished; no blanket data licence inferred.",
+  "geometryDecision": "Dimensions are explanatory only. No measured endpoints, absolute rail height, datum or rail gradient established. No numeric value changes scene geometry."
+}

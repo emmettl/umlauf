@@ -1,5 +1,9 @@
 # First proof validation — 7 September 2026
 
+## Platform inspection
+
+Thirteen source/model tests and fourteen desktop/phone Chromium checks pass locally, alongside typecheck, lint, independent-package boundary validation and production build. The added browser test checks selected-platform dimensions, zoom/reset, platform focus and unchanged clock while the display separates levels. Production JavaScript is 327.66 KB gzip. Measurements are small cited facts; the network, station and bridge artifact bytes are unchanged. Hosted CI is separate evidence.
+
 ## Official bridge outline
 
 Thirteen source/model tests and twelve desktop/phone Chromium checks pass locally, together with typecheck, lint, package-boundary validation and production build. The bridge check verifies exact retained source hashes and polygon geometry, the reviewed railway-to-bridge relation, the station artifact digest and explicit absence of metric height. Browser coverage adds outline switching and station usability when its optional source fails.

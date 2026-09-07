@@ -37,4 +37,6 @@ The PDF is retained locally in ignored `sources/ostkreuz-station-plan.pdf`. Its 
 
 The relative section now includes an optional [official ATKIS bridge footprint](ATKIS.md). Its mapped outline is supplied geometry; its placement on the upper display level is illustrative. The retained Ringbahn feature explicitly references this bridge. This adds a second geodata publisher under Germany Zero 2.0, with independent source hashes and attribution in the app.
 
+The [engineering follow-up](ENGINEERING.md) adds cited platform dimensions and 1×–3× inspection zoom. DB's height figures refer to the adjacent rail, not absolute elevation or separation between levels. Selecting a platform at close zoom centres it and reveals its dimensions without changing source geometry or time.
+
 Measured rail heights, individual platform extents, building structure and approaches still need engineering or survey evidence before the scene can claim a metric physical section. The inspected ATKIS records are two-dimensional and do not clear those fields.

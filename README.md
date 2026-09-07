@@ -12,6 +12,7 @@ First source-pinned interactive proof, 7 September 2026. An independent, unnumbe
 - Continuous geography-to-circulation diagram, preserving the source stop/path identities and timetable clock. A radial transformation makes the Ring approximately circular and applies the same transformation to the crossing network.
 - Ostkreuz relative interchange view: upper Ringbahn and lower east–west S-Bahn platforms, adjustable level separation, source connector filters, platform selection and scheduled-call jumps on the same clock. Station data loads only when this view is opened.
 - Optional official Ostkreuz bridge outline from Berlin ATKIS, linked to its retained Ringbahn source record. Footprint coordinates are supplied; vertical placement remains illustrative.
+- Station inspection zoom, with selected-platform focus and cited DB platform dimensions. Height above rail remains distinct from station elevation.
 - Play/pause, time scrubbing, playback speed, pan/zoom/reset, station selection and upcoming calls, journey following, labels and source disclosure. Reduced-motion preferences open paused.
 
 ## Run

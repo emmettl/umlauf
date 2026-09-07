@@ -1,4 +1,24 @@
 import {test,expect} from '@playwright/test'
+test('closer station inspection preserves time and distinguishes platform dimensions from scene height',async({page})=>{
+ await page.emulateMedia({reducedMotion:'reduce'});await page.goto('/')
+ await page.getByRole('button',{name:'Ostkreuz',exact:false}).click()
+ await expect(page.getByTestId('platform-facts')).toContainText('Select a platform')
+ await page.getByRole('combobox',{name:'Choose platform'}).selectOption({label:'Platform 11'})
+ await expect(page.getByTestId('platform-facts')).toContainText('155 m net built length')
+ await expect(page.getByTestId('platform-facts')).toContainText('96 cm above rail')
+ await page.getByRole('button',{name:'Zoom into station'}).click()
+ await page.getByRole('button',{name:'Zoom into station'}).click()
+ await expect(page.getByTestId('station-camera')).toHaveAttribute('transform',/scale\(2\)/)
+ await expect(page.getByTestId('clock')).toHaveText('08:00')
+ await page.getByRole('combobox',{name:'Choose platform'}).selectOption({label:'Platform 3'})
+ await expect(page.getByTestId('platform-facts')).toContainText('152 m net built length')
+ await page.getByRole('slider',{name:'Separate platform levels'}).fill('0')
+ await expect(page.getByTestId('platform-facts')).toContainText('96 cm above rail')
+ await page.getByRole('button',{name:'Reset station view'}).click()
+ await expect(page.getByTestId('station-camera')).toHaveAttribute('transform',/scale\(1\)/)
+ await expect(page.getByTestId('clock')).toHaveText('08:00')
+ expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true)
+})
 test('station data loads on demand, platform filters and level separation keep the same clock',async({page})=>{
  const errors:string[]=[],requests:string[]=[]
  page.on('pageerror',e=>errors.push(e.message));page.on('request',r=>requests.push(r.url()))

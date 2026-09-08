@@ -63,3 +63,5 @@ The owner-only Sites review uses the checked static build; source upload and pri
 ## Standard selection labels
 
 The shared `@motionstudies/three` alpha.4 renderer gives the selected station first label priority, then the selected route’s terminals (including branch endpoints), then intermediate stops. Selecting a service uses its own endpoints. Clearing selection restores normal station ranking. The rule applies to map clicks and search/picker selection in both geographic and diagram layouts. See the [Motion Studies edition contract](https://github.com/emmettl/motionstudies/blob/main/docs/EDITIONS.md#selection-and-station-labels).
+
+Shared dependencies pin the published `0.1.0-alpha.5` release, including the reusable split-flap airport board. This edition retains its existing data scope; no airport movements are fabricated.

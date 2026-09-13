@@ -1,3 +1,4 @@
+import { countableVehicleTrains, createActiveTimetableVehicleCounter } from '@motionstudies/core/domain/vehicle-counts'
 import StationDeparturesCard from './StationDeparturesCard'
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { buildStationIndex, formatServiceTime, type NetworkSnapshot, type NetworkTrain, type StationIndexEntry } from '@motionstudies/core/domain/network'
@@ -61,11 +62,9 @@ function Study({data,layout}:{data:NetworkSnapshot;layout:SpatialLayoutSnapshot}
   const network=useMemo(()=>subset(data,crossings,family,direction),[data,crossings,family,direction])
   const reference=useMemo(()=>({...network,bounds:{...network.bounds,minLongitude:network.bounds.minLongitude-(phone?0.04:0),maxLongitude:network.bounds.maxLongitude+(phone?0.04:0)}}),[network,phone])
   const stations=useMemo(()=>buildStationIndex(network),[network])
-  const countableTrains=useMemo(()=>{
-    const stationTrainIds=station?new Set(stations.find(s=>s.name===station.name)?.trainIds??[]):undefined
-    return network.trains.filter(t=>!stationTrainIds||stationTrainIds.has(t.id))
-  },[network,station,stations])
-  const active=countableTrains.filter(t=>t.realtime?.status!=='cancelled' && t.start<=time && t.end>=time)
+  const countableTrains=useMemo(()=>countableVehicleTrains(network,stations,{station}),[network,stations,station])
+  const countActiveTrains=useMemo(()=>createActiveTimetableVehicleCounter(countableTrains),[countableTrains])
+  const activeCount=countActiveTrains(time)
   const ringCounts=['S41','S42'].map(route=>data.trains.filter(t=>t.route===route&&t.start<=time&&t.end>=time).length)
   useEffect(()=>{
     if(!sources)return
@@ -108,7 +107,7 @@ function Study({data,layout}:{data:NetworkSnapshot;layout:SpatialLayoutSnapshot}
         <StationDeparturesCard snapshot={network} name={station.name} time={time} selectedId={train?.id} onSelect={setTrain}
           labels={{empty:'No further departures in this opening.'}} note="VBB · scheduled study · 7 September 2026 · not live" />
       </section>}
-      <div className="field-foot"><span>{mix>0?'AUTHORED CIRCULATION DIAGRAM':'GEOGRAPHIC PLAN'} · HEIGHTS UNRESOLVED</span><span>{active.length} active journeys</span></div>
+      <div className="field-foot"><span>{mix>0?'AUTHORED CIRCULATION DIAGRAM':'GEOGRAPHIC PLAN'} · HEIGHTS UNRESOLVED</span><span>{activeCount} active journeys</span></div>
       </>}
       </div>}
     </section>

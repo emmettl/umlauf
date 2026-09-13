@@ -1,3 +1,5 @@
+import { NetworkVehicleHeroCard } from '@motionstudies/web/components/NetworkVehicleHeroCard'
+import '@motionstudies/web/vehicle-hero-card.css'
 import { countableVehicleTrains, createActiveTimetableVehicleCounter } from '@motionstudies/core/domain/vehicle-counts'
 import StationDeparturesCard from './StationDeparturesCard'
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
@@ -104,8 +106,8 @@ function Study({data,layout}:{data:NetworkSnapshot;layout:SpatialLayoutSnapshot}
       <div className="map-context"><label><input type="checkbox" checked={waterEnabled} disabled={waterFailed} onChange={e=>setWaterEnabled(e.target.checked)}/> {waterFailed?'Water unavailable':'Spree & canals'}</label>{waterEnabled&&!waterFailed&&<span>{mix>0?'Fades as geography becomes a diagram':'Berlin ATKIS · geographic water'}</span>}</div>
       <div className="map-tools"><button aria-label="Zoom in" onClick={()=>setCamera({id:++cameraId.current,action:'zoom-in'})}>+</button><button aria-label="Zoom out" onClick={()=>setCamera({id:++cameraId.current,action:'zoom-out'})}>−</button><button aria-label="Reset view" onClick={reset}>↺</button><button aria-label="Train labels" title="Train labels · station names appear as you zoom" aria-pressed={labels} onClick={()=>setLabels(!labels)}>Aa</button></div>
       {station && <section className="station-card" aria-label="Selected station"><div><button aria-label="Close station" onClick={()=>{setStation(undefined);setTrain(undefined)}}>×</button></div>
-        <StationDeparturesCard snapshot={network} name={station.name} time={time} selectedId={train?.id} onSelect={setTrain}
-          labels={{empty:'No further departures in this opening.'}} note="VBB · scheduled study · 7 September 2026 · not live" />
+        {train ? <><button aria-label="Back to departures" onClick={()=>setTrain(undefined)}>← Departures</button><NetworkVehicleHeroCard snapshot={network} train={train} time={time} presentation="uk-rail" note="VBB · scheduled study · 7 September 2026 · not live" /></> : <StationDeparturesCard snapshot={network} name={station.name} time={time} onSelect={setTrain}
+          labels={{empty:'No further departures in this opening.'}} note="VBB · scheduled study · 7 September 2026 · not live" />}
       </section>}
       <div className="field-foot"><span>{mix>0?'AUTHORED CIRCULATION DIAGRAM':'GEOGRAPHIC PLAN'} · HEIGHTS UNRESOLVED</span><span>{activeCount} active journeys</span></div>
       </>}

@@ -1,3 +1,4 @@
+import StationDeparturesCard from './StationDeparturesCard'
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { buildStationIndex, formatServiceTime, type NetworkSnapshot, type NetworkTrain, type StationIndexEntry } from '@motionstudies/core/domain/network'
 import type { SpatialLayoutSnapshot } from '@motionstudies/core/domain/spatial-layout'
@@ -66,12 +67,6 @@ function Study({data,layout}:{data:NetworkSnapshot;layout:SpatialLayoutSnapshot}
   },[network,station,stations])
   const active=countableTrains.filter(t=>t.realtime?.status!=='cancelled' && t.start<=time && t.end>=time)
   const ringCounts=['S41','S42'].map(route=>data.trains.filter(t=>t.route===route&&t.start<=time&&t.end>=time).length)
-  const calls=useMemo(()=>{
-    if(!station)return []
-    const ids=new Set(station.stopIndexes)
-    return network.trains.flatMap(t=>t.stops.filter(s=>ids.has(s[0])).map(s=>({train:t,arrival:s[1],departure:s[2]}))).sort((a,b)=>a.arrival-b.arrival)
-  },[network,station])
-  const upcoming=calls.filter(c=>c.departure>=time).slice(0,4)
   useEffect(()=>{
     if(!sources)return
     closeSources.current?.focus()
@@ -109,7 +104,10 @@ function Study({data,layout}:{data:NetworkSnapshot;layout:SpatialLayoutSnapshot}
       {mix>0&&<p className="direction-note"><span className="amber">S41 outer</span> · <span className="mint">S42 inner</span> · diagram spacing</p>}
       <div className="map-context"><label><input type="checkbox" checked={waterEnabled} disabled={waterFailed} onChange={e=>setWaterEnabled(e.target.checked)}/> {waterFailed?'Water unavailable':'Spree & canals'}</label>{waterEnabled&&!waterFailed&&<span>{mix>0?'Fades as geography becomes a diagram':'Berlin ATKIS · geographic water'}</span>}</div>
       <div className="map-tools"><button aria-label="Zoom in" onClick={()=>setCamera({id:++cameraId.current,action:'zoom-in'})}>+</button><button aria-label="Zoom out" onClick={()=>setCamera({id:++cameraId.current,action:'zoom-out'})}>−</button><button aria-label="Reset view" onClick={reset}>↺</button><button aria-label="Train labels" title="Train labels · station names appear as you zoom" aria-pressed={labels} onClick={()=>setLabels(!labels)}>Aa</button></div>
-      {station && <section className="station-card" aria-label="Selected station"><div><h2>{station.name}</h2><button aria-label="Close station" onClick={()=>{setStation(undefined);setTrain(undefined)}}>×</button></div><p>Next scheduled calls · {formatServiceTime(time)}</p>{upcoming.length?upcoming.map((c,i)=><button className="call" key={`${c.train.id}:${i}`} onClick={()=>setTrain(c.train)}><span style={{color:COLORS[c.train.route]}}>{c.train.route}</span><span>{c.train.headsign}</span><time>{formatServiceTime(c.arrival)}</time></button>):<p>No further calls in this opening.</p>}</section>}
+      {station && <section className="station-card" aria-label="Selected station"><div><button aria-label="Close station" onClick={()=>{setStation(undefined);setTrain(undefined)}}>×</button></div>
+        <StationDeparturesCard snapshot={network} name={station.name} time={time} selectedId={train?.id} onSelect={setTrain}
+          labels={{empty:'No further departures in this opening.'}} note="VBB · scheduled study · 7 September 2026 · not live" />
+      </section>}
       <div className="field-foot"><span>{mix>0?'AUTHORED CIRCULATION DIAGRAM':'GEOGRAPHIC PLAN'} · HEIGHTS UNRESOLVED</span><span>{active.length} active journeys</span></div>
       </>}
       </div>}

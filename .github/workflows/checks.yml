@@ -18,7 +18,7 @@ jobs:
         with:
           node-version-file: .nvmrc
           cache: npm
-      - run: npm install --global npm@11.19.0 --ignore-scripts
+      - run: npm install --global npm@11.21.0 --ignore-scripts
       - run: npm ci
       - run: npm run typecheck && npm run lint && npm run check:boundary && npm test && npm run build && npm run check:budget
       # Runtime libraries are present on the hosted Ubuntu image. Avoid the

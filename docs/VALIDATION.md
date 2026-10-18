@@ -48,3 +48,13 @@ The initial CI run passed its Node 24 build/source checks but spent over thirtee
 - Layout SHA-256: `39644f74a4bbc7e56ebcb561063f834a3f12a099ec8e8b0e3284dc518e425c79`.
 
 Local toolchain: Node 26.8.1 and npm 11.19.0 on macOS. CI is configured for Node 24; its result is separate from these local checks. Production JavaScript is approximately 323 KB gzip, with a Vite warning for the uncompressed renderer chunk exceeding 500 KB. The shared renderer also emits a Three.js Clock deprecation warning. No browser page errors occurred. Neither warning establishes a failed function, but renderer modernization and physical phone frame/memory budgets remain follow-up work.
+
+## October maintenance — 18 October 2026
+
+Ostkreuz playback now counts complete foreground frame intervals instead of
+capping each interval at 100 ms. Visibility changes reset the frame baseline so
+hidden-tab time is excluded. Looping handles intervals spanning multiple study
+windows. Unit tests exercise slow-frame cadence, visibility resets and wrapping;
+a controlled-clock browser regression exercises a delayed frame, background time,
+resumption and pause in the station scene. See the central October dependency
+maintenance record for validation results and toolchain versions.

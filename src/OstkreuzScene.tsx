@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useRef, useState, type CSSProperties } from 'react'
+import { advancePlaybackTime, createPlaybackTimer } from './playback-clock'
 import { BridgeOutline } from './BridgeOutline'
 import { PlatformFacts } from './PlatformFacts'
 import { formatServiceTime, type NetworkSnapshot } from '@motionstudies/core/domain/network'
@@ -13,9 +14,17 @@ export function OstkreuzScene({network,time,playing,rate,onTime,onInspectCall,on
  const clock=useRef(time);useEffect(()=>{clock.current=time},[time])
  useEffect(()=>{
   if(!playing)return
-  let handle=0,last=0
-  const tick=(now:number)=>{if(last){clock.current+=Math.min(0.1,(now-last)/1000)*rate;if(clock.current>network.metadata.windowEnd)clock.current=network.metadata.windowStart+(clock.current-network.metadata.windowEnd);onTime(clock.current)}last=now;handle=requestAnimationFrame(tick)}
-  handle=requestAnimationFrame(tick);return()=>cancelAnimationFrame(handle)
+  let handle=0
+  const timer=createPlaybackTimer()
+  const reset=()=>timer.reset()
+  const tick=(now:number)=>{
+   const elapsed=timer.elapsed(now,!document.hidden)
+   if(elapsed>0){clock.current=advancePlaybackTime(clock.current,elapsed,rate,network.metadata.windowStart,network.metadata.windowEnd);onTime(clock.current)}
+   handle=requestAnimationFrame(tick)
+  }
+  document.addEventListener('visibilitychange',reset)
+  handle=requestAnimationFrame(tick)
+  return()=>{cancelAnimationFrame(handle);document.removeEventListener('visibilitychange',reset)}
  },[playing,rate,onTime,network.metadata.windowStart,network.metadata.windowEnd])
  const scene=useMemo(()=>{
   if(!data)return

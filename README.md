@@ -19,6 +19,8 @@ First source-pinned interactive proof, 7 September 2026. An independent, unnumbe
 
 ## Run
 
+The public study is served at [motionstudies.app/umlauf](https://motionstudies.app/umlauf/), with [GitHub Pages](https://emmettl.github.io/umlauf/) retained as a mirror. A separate Cloudflare workflow publishes the exact artifact from a successful main Pages workflow; failed checks do not publish. See [series hosting](https://github.com/emmettl/motionstudies/blob/main/docs/HOSTING.md) for the shared publication and rollback contract.
+
 Use Node 24 LTS or later and npm 11.21.1:
 
 ```sh

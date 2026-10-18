@@ -2,7 +2,7 @@
 
 **A Berlin motion study.** A railway draws an inside. The city keeps crossing it.
 
-First source-pinned interactive proof, 7 September 2026. An independent, unnumbered [Motion Studies](https://github.com/emmettl/motionstudies) edition consuming exact published `@motionstudies/*` version `0.1.0-alpha.3`. Umlauf remains a working title.
+First source-pinned interactive proof, 7 September 2026. An independent, unnumbered [Motion Studies](https://github.com/emmettl/motionstudies) edition consuming exact published `@motionstudies/*` version `0.1.0-alpha.31`. Umlauf remains a working title.
 
 ## What works
 
@@ -19,7 +19,7 @@ First source-pinned interactive proof, 7 September 2026. An independent, unnumbe
 
 ## Run
 
-Use Node 24 LTS or later and npm 11.19.0:
+Use Node 24 LTS or later and npm 11.21.1:
 
 ```sh
 npm ci
@@ -62,6 +62,6 @@ The owner-only Sites review uses the checked static build; source upload and pri
 
 ## Standard selection labels
 
-The shared `@motionstudies/three` alpha.4 renderer gives the selected station first label priority, then the selected route’s terminals (including branch endpoints), then intermediate stops. Selecting a service uses its own endpoints. Clearing selection restores normal station ranking. The rule applies to map clicks and search/picker selection in both geographic and diagram layouts. See the [Motion Studies edition contract](https://github.com/emmettl/motionstudies/blob/main/docs/EDITIONS.md#selection-and-station-labels).
+The shared `@motionstudies/three` alpha.31 renderer gives the selected station first label priority, then the selected route’s terminals (including branch endpoints), then intermediate stops. Selecting a service uses its own endpoints. Clearing selection restores normal station ranking. The rule applies to map clicks and search/picker selection in both geographic and diagram layouts. See the [Motion Studies edition contract](https://github.com/emmettl/motionstudies/blob/main/docs/EDITIONS.md#selection-and-station-labels).
 
-Shared dependencies pin the published `0.1.0-alpha.5` release, including the reusable split-flap airport board. This edition retains its existing data scope; no airport movements are fabricated.
+Shared dependencies pin the published `0.1.0-alpha.31` release; adoption does not change this edition’s data scope.

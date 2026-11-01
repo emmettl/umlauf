@@ -30,8 +30,12 @@ test('Ostkreuz playback counts foreground stalls and excludes hidden-tab time', 
   })
   await page.clock.runFor(32)
   expect(Number(await slider.inputValue()) - Number(hidden)).toBeLessThanOrEqual(1)
-  await page.clock.runFor(1000)
-  expect(Number(await slider.inputValue()) - Number(hidden)).toBeGreaterThan(29)
+  const resumed = Number(await slider.inputValue())
+  // Deliver a known one-second frame interval. runFor can end between RAFs;
+  // the range control quantizes that partial interval to whole study seconds.
+  await page.clock.fastForward(1000)
+  await expect.poll(async () => Number(await slider.inputValue()) - resumed).toBeGreaterThan(29)
+  expect(Number(await slider.inputValue()) - resumed).toBeLessThan(31)
   await page.getByRole('button', { name: 'Pause playback', exact: true }).click()
   const paused = await slider.inputValue()
   await page.clock.fastForward(5000)

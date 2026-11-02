@@ -1,5 +1,15 @@
 # Current review validation
 
+## Stable renderer APIs · 2 November 2026
+
+The alpha.50 adoption candidate retains application source, all six published data
+artifacts, Fiber 9.8.2 and WebGL. Twenty source/model tests and static checks pass.
+The corrected opening payload is 580,478 / 588,800 bytes gzip, 186 bytes below
+the identically accounted alpha.43 baseline. Chromium and WebKit now cover desktop
+and phone layouts; CI tests the production build. See the [adoption record](RENDERER-ALPHA-50.md)
+for exact registry pins, baseline/fresh captures, prior local browser results and
+the remaining author/physical-device review limits.
+
 ## Ostkreuz travel and zoom labels · 7 September 2026
 
 Seventeen source/model tests and thirty desktop/phone browser checks cover the reversible approach, interrupted travel, preserved time/direction/crossing family/diagram setting, lazy station loading, slow and failed source recovery, reduced motion, and additional station-label textures rendered at closer zoom while train labels remain off. Travel follows elapsed time even when frames are dropped; a hosted-run failure exposed and corrected the original per-frame cap. The reversal test uses controlled time after the lazy module loads. The city canvas is removed after arrival; exactly one scene owns playback. The transition, final station view and closer map labels were visually inspected at 1440×1000 and 390×844.

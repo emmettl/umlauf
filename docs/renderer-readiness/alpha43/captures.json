@@ -1,0 +1,80 @@
+{
+  "capturedAt": "2026-11-01T21:56:55.910Z",
+  "mode": "alpha43",
+  "sourceCommit": "9d1142c72201f13c270af259d26505baf17ddfe0",
+  "sharedVersion": "0.1.0-alpha.43",
+  "browserVersion": "156.0.8078.4",
+  "scope": "Paused production-build composition captures; DPR 1 emulation, not physical-phone or performance acceptance.",
+  "captures": [
+    {
+      "viewport": "desktop",
+      "scene": "geography",
+      "file": "desktop-geography.png",
+      "sha256": "5e337c8591a3fd47f275e7d273dea00aef51846099ae8e140e054bbb2b3d7eab",
+      "canvasCount": 1,
+      "graphics": {
+        "api": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+        "width": 1140,
+        "height": 909
+      },
+      "clock": "08:00"
+    },
+    {
+      "viewport": "desktop",
+      "scene": "circulation",
+      "file": "desktop-circulation.png",
+      "sha256": "3e6e441e216df93b1e41d1cef1765764a024a72241e3091d0268d5202193c993",
+      "canvasCount": 1,
+      "graphics": {
+        "api": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+        "width": 1140,
+        "height": 909
+      },
+      "clock": "08:00"
+    },
+    {
+      "viewport": "desktop",
+      "scene": "ostkreuz",
+      "file": "desktop-ostkreuz.png",
+      "sha256": "a57a33cdd9d5477a41bfe2bb9258af01d5bc37aba5c033023e29079169d77542",
+      "canvasCount": 0,
+      "graphics": null,
+      "clock": "08:00"
+    },
+    {
+      "viewport": "phone",
+      "scene": "geography",
+      "file": "phone-geography.png",
+      "sha256": "50843dea0b01a4500fd95329a7fc7321d2d8ebf8713093367c50542c6cb46ce4",
+      "canvasCount": 1,
+      "graphics": {
+        "api": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+        "width": 390,
+        "height": 343
+      },
+      "clock": "08:00"
+    },
+    {
+      "viewport": "phone",
+      "scene": "circulation",
+      "file": "phone-circulation.png",
+      "sha256": "119d4a51cd0df97cbf5ae5b39c666b5762be11243a1dc0b7d725d3b562934184",
+      "canvasCount": 1,
+      "graphics": {
+        "api": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+        "width": 390,
+        "height": 343
+      },
+      "clock": "08:00"
+    },
+    {
+      "viewport": "phone",
+      "scene": "ostkreuz",
+      "file": "phone-ostkreuz.png",
+      "sha256": "f36ae22a16dfaebe73f95beda741e69224c5699adeff04f1859ed86898b6027c",
+      "canvasCount": 0,
+      "graphics": null,
+      "clock": "08:00"
+    }
+  ]
+}

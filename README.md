@@ -2,7 +2,7 @@
 
 **A Berlin motion study.** A railway draws an inside. The city keeps crossing it.
 
-First source-pinned interactive proof, 7 September 2026. An independent, unnumbered [Motion Studies](https://github.com/emmettl/motionstudies) edition consuming exact published `@motionstudies/*` version `0.1.0-alpha.42`. Umlauf remains a working title.
+First source-pinned interactive proof, 7 September 2026. An independent, unnumbered [Motion Studies](https://github.com/emmettl/motionstudies) edition consuming exact published `@motionstudies/*` version `0.1.0-alpha.50`. Umlauf remains a working title.
 
 ## What works
 
@@ -40,7 +40,7 @@ npm run check:budget
 npm run test:browser
 ```
 
-Browser checks require Playwright Chromium (`npx playwright install chromium`). The current suite exercises desktop and phone viewports. Device emulation is not physical-device performance certification.
+Browser checks require Playwright Chromium and WebKit (`npx playwright install chromium webkit`). The suite exercises desktop and phone viewports in both engines. Servers are fresh by default; use `PLAYWRIGHT_REUSE_SERVER=1` only when deliberately reusing the selected server. Device emulation is not physical-device performance certification.
 
 ## Sources and reproducibility
 
@@ -64,6 +64,6 @@ The owner-only Sites review uses the checked static build; source upload and pri
 
 ## Standard selection labels
 
-The shared `@motionstudies/three` alpha.42 renderer gives the selected station first label priority, then the selected route’s terminals (including branch endpoints), then intermediate stops. Selecting a service uses its own endpoints. Clearing selection restores normal station ranking. The rule applies to map clicks and search/picker selection in both geographic and diagram layouts. See the [Motion Studies edition contract](https://github.com/emmettl/motionstudies/blob/main/docs/EDITIONS.md#selection-and-station-labels).
+The shared `@motionstudies/three` renderer gives the selected station first label priority, then the selected route’s terminals (including branch endpoints), then intermediate stops. Selecting a service uses its own endpoints. Clearing selection restores normal station ranking. The rule applies to map clicks and search/picker selection in both geographic and diagram layouts. See the [Motion Studies edition contract](https://github.com/emmettl/motionstudies/blob/main/docs/EDITIONS.md#selection-and-station-labels).
 
-Shared dependencies pin the published `0.1.0-alpha.42` release; adoption does not change this edition’s data scope.
+Shared dependencies pin the published `0.1.0-alpha.50` release; adoption does not change this edition’s data scope. See [renderer adoption and validation](docs/RENDERER-ALPHA-50.md).

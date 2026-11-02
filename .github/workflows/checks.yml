@@ -11,7 +11,7 @@ permissions:
 jobs:
   check:
     runs-on: ubuntu-latest
-    timeout-minutes: 12
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v7
       - uses: actions/setup-node@v7
@@ -21,15 +21,15 @@ jobs:
       - run: npm install --global npm@11.21.1 --ignore-scripts
       - run: npm ci
       - run: npm run typecheck && npm run lint && npm run check:boundary && npm test && npm run build && npm run check:budget
-      # Runtime libraries are present on the hosted Ubuntu image. Avoid the
-      # optional font downloads that stalled on the Ubuntu package mirror.
-      - run: npx playwright install chromium
+      # WebKit needs its runtime libraries as well as the browser archive.
+      - run: npx playwright install --with-deps chromium webkit
         timeout-minutes: 5
       # WebGL rendering shares the hosted runner's CPU; avoid competing scenes.
       - name: E2E tests
         id: e2e
         env:
           E2E_SUITE: Umlauf
+          PLAYWRIGHT_SERVER_COMMAND: npx vite preview --host 127.0.0.1 --port 4177 --strictPort
         run: npm run test:browser -- --workers=1
       - name: Upload E2E report, screenshots and traces
         id: e2e-report

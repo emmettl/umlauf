@@ -1,0 +1,74 @@
+{
+  "capturedAt": "2026-11-02T18:46:04.483Z",
+  "sourceCommit": "9d49146d354f683617383358e7cc797241e09946",
+  "browserVersion": "156.0.8078.4",
+  "scope": "Paused production preview; DPR1 emulation. No physical-device or author acceptance.",
+  "captures": [
+    {
+      "viewport": "desktop",
+      "scene": "geography",
+      "file": "desktop-geography.png",
+      "sha256": "4782a91e742560c3d2f9b87dd8d3a0d30b68b2e91c3dbdacc2866003729da1b3",
+      "clock": "08:00",
+      "size": {
+        "width": 1440,
+        "height": 1000
+      }
+    },
+    {
+      "viewport": "desktop",
+      "scene": "circulation",
+      "file": "desktop-circulation.png",
+      "sha256": "ea29291c1f697ed53c7cf9305bf691d8aa29cf5b2ee7c59ec8875f638beb4287",
+      "clock": "08:00",
+      "size": {
+        "width": 1440,
+        "height": 1000
+      }
+    },
+    {
+      "viewport": "desktop",
+      "scene": "ostkreuz",
+      "file": "desktop-ostkreuz.png",
+      "sha256": "a57a33cdd9d5477a41bfe2bb9258af01d5bc37aba5c033023e29079169d77542",
+      "clock": "08:00",
+      "size": {
+        "width": 1440,
+        "height": 1000
+      }
+    },
+    {
+      "viewport": "phone",
+      "scene": "geography",
+      "file": "phone-geography.png",
+      "sha256": "320533d998fedd70136d7e23c2faeedc17371986f8dac1a652e8461f5c094637",
+      "clock": "08:00",
+      "size": {
+        "width": 390,
+        "height": 664
+      }
+    },
+    {
+      "viewport": "phone",
+      "scene": "circulation",
+      "file": "phone-circulation.png",
+      "sha256": "a069f3416e84837e5065c6ec236f331023bf995a628fbb92194492b8afb6eba5",
+      "clock": "08:00",
+      "size": {
+        "width": 390,
+        "height": 664
+      }
+    },
+    {
+      "viewport": "phone",
+      "scene": "ostkreuz",
+      "file": "phone-ostkreuz.png",
+      "sha256": "f36ae22a16dfaebe73f95beda741e69224c5699adeff04f1859ed86898b6027c",
+      "clock": "08:00",
+      "size": {
+        "width": 390,
+        "height": 664
+      }
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "capturedAt": "2026-11-02T18:46:04.483Z",
+  "scope": "Cross-session diagnostic comparison; browser/headless rendering and capture setup can vary.",
+  "comparison": [
+    {
+      "file": "desktop-geography.png",
+      "width": 1440,
+      "height": 1000,
+      "changedPixels": 541,
+      "changedPercent": 0.03756944444444445,
+      "maxChannelDelta": 59
+    },
+    {
+      "file": "desktop-circulation.png",
+      "width": 1440,
+      "height": 1000,
+      "changedPixels": 34,
+      "changedPercent": 0.002361111111111111,
+      "maxChannelDelta": 59
+    },
+    {
+      "file": "desktop-ostkreuz.png",
+      "width": 1440,
+      "height": 1000,
+      "changedPixels": 0,
+      "changedPercent": 0,
+      "maxChannelDelta": 0
+    },
+    {
+      "file": "phone-geography.png",
+      "width": 390,
+      "height": 664,
+      "changedPixels": 66,
+      "changedPercent": 0.025486561631139944,
+      "maxChannelDelta": 82
+    },
+    {
+      "file": "phone-circulation.png",
+      "width": 390,
+      "height": 664,
+      "changedPixels": 10,
+      "changedPercent": 0.0038616002471424157,
+      "maxChannelDelta": 2
+    },
+    {
+      "file": "phone-ostkreuz.png",
+      "width": 390,
+      "height": 664,
+      "changedPixels": 0,
+      "changedPercent": 0,
+      "maxChannelDelta": 0
+    }
+  ]
+}

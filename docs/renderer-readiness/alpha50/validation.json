@@ -1,0 +1,27 @@
+{
+  "recordedAt": "2026-11-02T18:46:27.037881+00:00",
+  "applicationCommit": "9d49146d354f683617383358e7cc797241e09946",
+  "staticChecks": [
+    "typecheck",
+    "lint",
+    "boundary",
+    "unit",
+    "build",
+    "budget"
+  ],
+  "unitTestsPassed": 20,
+  "openingGzipBytes": 580478,
+  "baselineOpeningGzipBytes": 580664,
+  "budgetGzipBytes": 588800,
+  "deltaGzipBytes": -186,
+  "priorLocalBrowserChecks": {
+    "developmentPassed": 68,
+    "productionPassed": 68,
+    "scope": "Completed in preceding session; temporary raw reports were cleared. Hosted PR CI retains independent production-build evidence."
+  },
+  "renderer": "WebGL2",
+  "fiber": "9.8.2",
+  "sourceAndDataUnchanged": true,
+  "physicalDeviceAcceptance": "open",
+  "authorVisualAcceptance": "open"
+}

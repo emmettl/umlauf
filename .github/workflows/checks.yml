@@ -29,6 +29,7 @@ jobs:
         id: e2e
         env:
           E2E_SUITE: Umlauf
+          PLAYWRIGHT_SERVER_COMMAND: npx vite preview --host 127.0.0.1 --port 4177 --strictPort
         run: npm run test:browser -- --workers=1
       - name: Upload E2E report, screenshots and traces
         id: e2e-report

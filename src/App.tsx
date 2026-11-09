@@ -1,3 +1,4 @@
+import { useMediaQuery } from '@motionstudies/web/use-media-query'
 import { NetworkVehicleHeroCard } from '@motionstudies/web/components/NetworkVehicleHeroCard'
 import '@motionstudies/web/vehicle-hero-card.css'
 import { countableVehicleTrains, createActiveTimetableVehicleCounter } from '@motionstudies/core/domain/vehicle-counts'
@@ -41,8 +42,7 @@ export function App() {
 }
 
 function Study({data,layout}:{data:NetworkSnapshot;layout:SpatialLayoutSnapshot}) {
-  const [phone,setPhone]=useState(()=>matchMedia('(max-width:760px)').matches)
-  useEffect(()=>{const query=matchMedia('(max-width:760px)'),update=()=>setPhone(query.matches);query.addEventListener('change',update);return()=>query.removeEventListener('change',update)},[])
+  const phone=useMediaQuery('(max-width:760px)')
   const framing=useMemo(()=>({...desktopFraming,homeDistanceScale:phone?1.18:0.96,stationLabelHeightScale:phone?1.1:1}),[phone])
   const [time,setTime]=useState(data.metadata.focusTime),[playing,setPlaying]=useState(!matchMedia('(prefers-reduced-motion: reduce)').matches)
   const [direction,setDirection]=useState<Direction>('both')

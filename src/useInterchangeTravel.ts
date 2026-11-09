@@ -1,3 +1,4 @@
+import { useMediaQuery } from '@motionstudies/web/use-media-query'
 import { useEffect, useRef, useState } from 'react'
 
 export function travelStage(progress:number,start:number,end:number){
@@ -14,8 +15,7 @@ export function advanceTravel(current:number,target:number,elapsedMs:number){
 // Wait for verified station data before leaving the city, including reduced motion.
 export function useInterchangeTravel(enter:boolean,ready:boolean){
  const [progress,setProgress]=useState(0),current=useRef(0)
- const [reduced,setReduced]=useState(()=>matchMedia('(prefers-reduced-motion: reduce)').matches)
- useEffect(()=>{const media=matchMedia('(prefers-reduced-motion: reduce)'),update=()=>setReduced(media.matches);media.addEventListener('change',update);return()=>media.removeEventListener('change',update)},[])
+ const reduced=useMediaQuery('(prefers-reduced-motion: reduce)')
  useEffect(()=>{
   const target=enter&&ready?1:0
   if(reduced){current.current=target;setProgress(target);return}

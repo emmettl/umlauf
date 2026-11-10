@@ -21,7 +21,7 @@ First source-pinned interactive proof, 7 September 2026. An independent, unnumbe
 
 The public study is served at [motionstudies.app/umlauf](https://motionstudies.app/umlauf/), with [GitHub Pages](https://emmettl.github.io/umlauf/) retained as a mirror. A separate Cloudflare workflow publishes the exact artifact from a successful main Pages workflow; failed checks do not publish. See [series hosting](https://github.com/emmettl/motionstudies/blob/main/docs/HOSTING.md) for the shared publication and rollback contract.
 
-Use Node 24 LTS or later and npm 11.21.1:
+Use Node 24 LTS or later and npm 12.2.2:
 
 ```sh
 npm ci
@@ -67,3 +67,5 @@ The owner-only Sites review uses the checked static build; source upload and pri
 The shared `@motionstudies/three` renderer gives the selected station first label priority, then the selected route’s terminals (including branch endpoints), then intermediate stops. Selecting a service uses its own endpoints. Clearing selection restores normal station ranking. The rule applies to map clicks and search/picker selection in both geographic and diagram layouts. See the [Motion Studies edition contract](https://github.com/emmettl/motionstudies/blob/main/docs/EDITIONS.md#selection-and-station-labels).
 
 Shared dependencies pin the published `0.1.0-alpha.50` release; adoption does not change this edition’s data scope. See [renderer adoption and validation](docs/RENDERER-ALPHA-50.md).
+
+Development targets Node 26 and npm 12.2.2. Shared Motion Studies packages are pinned to 1.0.0; `npm run check:stack` validates the adopted baseline through `@motionstudies/tooling`. Edition-specific data, boundary and publication checks remain local.
